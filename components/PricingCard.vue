@@ -6,11 +6,11 @@
           <img :src="PricingIcon" alt="Football Icon" class="pricing-icon" />
         </div>
         <h2 class="pricing-title">{{ cardTitle }}</h2>
+        <div class="pricing-price">
+          <h2>$ 52<small>/mo</small></h2>
+          <p>Billed monthly</p>
+        </div>
       </b-col>
-      <div class="pricing-price">
-        <h2>$ 52<small>/mo</small></h2>
-        <p>Billed monthly</p>
-      </div>
       <hr />
       <div class="pricing-features">
         <ul class="feature-list">
@@ -35,20 +35,31 @@ const props = defineProps(['PricingIcon', 'cardTitle', 'color', 'benefits'])
 
 <style scoped>
 .pricing-card {
-  max-width: 25rem;
-  text-align: center;
-  padding: 2rem;
-  border-radius: 0.5rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   color: #5f6570;
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 1.5rem;
+  text-align: center;
+  border-radius: 1.25rem;
+  flex-direction: column;
+  width: 100%;
+  max-width: 25rem;
+  padding: 2.5rem 2rem;
+  display: flex;
 }
 
 .pricing-header {
-  display: flex;
+  grid-column-gap: 0.5rem;
+  grid-row-gap: 0.5rem;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+hr {
+  margin: 0;
+  padding: 0;
 }
 
 .imgBox {
@@ -72,6 +83,8 @@ const props = defineProps(['PricingIcon', 'cardTitle', 'color', 'benefits'])
 
 .pricing-price h2 {
   color: v-bind(color);
+  margin: 0;
+  padding: 0;
 }
 
 .pricing-price small {
@@ -79,22 +92,18 @@ const props = defineProps(['PricingIcon', 'cardTitle', 'color', 'benefits'])
   color: #1f2c3d;
 }
 
-.pricing-features {
-  margin-bottom: 2rem;
-}
-
 .feature-list {
   list-style: none;
   padding: 0;
   margin: 0;
   text-align: left;
+  line-height: 2;
 }
 
 .feature-list li {
   display: flex;
   align-items: center;
   text-align: left;
-  margin-bottom: 0.5rem;
 }
 
 .feature-list li svg {

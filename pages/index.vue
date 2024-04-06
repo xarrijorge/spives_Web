@@ -61,10 +61,9 @@
         card-title="Scouts"
         color="#00A1C0"
         :benefits="[
-          'Easy access to multiple player profiles',
-          'Access to player analytics',
-          'Player info data',
-          'Connect with other coaches/scouts',
+          'Access to trainers/coaches',
+          'Opportunity to meet scout',
+          'Access to create analytics',
         ]" />
     </b-row>
   </b-container>
