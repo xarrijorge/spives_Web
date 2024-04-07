@@ -29,10 +29,12 @@
       <b-row class="overallStats" bg-variant="orange">
         <!-- Overall stat progress bar and football field map icon -->
         <b-col cols="12">
-          <p>Overall Stats Progress</p>
-          <b-progress :value="player.overallProgress" max="100" class="mb-3" />
           <circle-progress :percent="70" />
-          <b-icon icon="soccer-ball" class="footballIcon" />
+          <img
+            src="/images/fieldSVG.png"
+            alt="Football Field"
+            class="footballIcon"
+            width="80px" />
         </b-col>
       </b-row>
     </div>
@@ -80,11 +82,12 @@ const props = defineProps({
   height: auto;
   background-color: white;
 }
-
-.footballIcon {
-  font-size: 2rem;
-  color: white;
-  margin-left: 5px;
+.overallStats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  height: 60px;
 }
 
 .playerDetails {
