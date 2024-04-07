@@ -5,8 +5,12 @@
 </template>
 <script setup></script>
 <style>
+html * {
+  font-family: 'Montserrat', sans-serif;
+}
 body {
   background-color: #f2f3f7;
+  font-family: 'Montserrat', sans-serif;
 }
 .contactButton:hover {
   background-color: #1f2c3d;
@@ -19,10 +23,13 @@ body {
   text-align: center;
   border-radius: 0.5rem;
   padding: 0.75rem 1.75rem;
-  font-family: Open Sans, sans-serif;
   font-size: 1rem;
   font-weight: 400;
   text-decoration: none;
   transition-property: #000066;
+}
+p {
+  margin: 0;
+  padding: 0;
 }
 </style>

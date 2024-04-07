@@ -123,6 +123,6 @@ watch(filters, applyFilters, { deep: true })
 
 .talentsPage {
   width: 90vw;
-  margin: 0 auto;
+  margin: 100px auto;
 }
 </style>

@@ -74,7 +74,6 @@
   min-height: 4.5rem;
   padding: 0 5%;
   font-family: Montserrat, sans-serif;
-  margin-bottom: 50px;
 }
 a.nav-link {
   color: #000066;
