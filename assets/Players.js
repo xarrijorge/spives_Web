@@ -1,9 +1,9 @@
 const Players = [
     {
         "id": 1,
-        "name": "Player 1",
-        "nationality": "Country A",
-        "age": 24,
+        "name": "Wynston Cole",
+        "nationality": "Liberian",
+        "age": 17,
         "position": "Forward",
         "gender": "Male",
         "image": "/PlayerCardImage.jpeg",
