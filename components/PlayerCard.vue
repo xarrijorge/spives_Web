@@ -30,11 +30,7 @@
         <!-- Overall stat progress bar and football field map icon -->
         <b-col cols="12">
           <circle-progress :percent="70" />
-          <img
-            src="/images/fieldSVG.png"
-            alt="Football Field"
-            class="footballIcon"
-            width="80px" />
+          <img src="#" alt="Football Field" class="footballIcon" width="80px" />
         </b-col>
       </b-row>
     </div>
