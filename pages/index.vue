@@ -64,12 +64,12 @@
 
     <!-- Our Team Section -->
     <b-row class="mb-5 section-container">
-      <b-col cols="12">
+      <b-col cols="12" class="team-section">
         <h1>Our Team</h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          varius enim in eros elementum tristique. Duis cursus, mi quis viverra
-          ornare, eros dolor interdum nulla.
+          Across Africa, a passionate team unites. We bring diverse talents
+          together to showcase the best of African creativity on the global
+          stage. Meet the Spives family!
         </p>
         <b-row>
           <b-col cols="6" md="3">
@@ -135,6 +135,9 @@ const talents = Players.splice(0, 4)
   font-weight: 400;
   line-height: 1.5;
   color: #5f6570;
+}
+.team-section {
+  text-align: center;
 }
 /* Custom styles for pricing cards on mobile */
 @media (max-width: 767px) {
