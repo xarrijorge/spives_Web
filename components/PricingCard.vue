@@ -1,5 +1,5 @@
 <template>
-  <b-container>
+  <b-container class="pricingContainer">
     <b-col class="pricing-card">
       <b-col class="pricing-header">
         <div class="imgBox">
@@ -7,7 +7,7 @@
         </div>
         <h2 class="pricing-title">{{ cardTitle }}</h2>
         <div class="pricing-price">
-          <h2>$ 52<small>/mo</small></h2>
+          <h2>$ {{ price }}<small>/mo</small></h2>
           <p>Billed monthly</p>
         </div>
       </b-col>
@@ -30,7 +30,13 @@
 <script setup>
 import PricingSVG from './PricingSVG.vue'
 
-const props = defineProps(['PricingIcon', 'cardTitle', 'color', 'benefits'])
+const props = defineProps([
+  'PricingIcon',
+  'cardTitle',
+  'color',
+  'benefits',
+  'price',
+])
 </script>
 
 <style scoped>
@@ -42,10 +48,10 @@ const props = defineProps(['PricingIcon', 'cardTitle', 'color', 'benefits'])
   text-align: center;
   border-radius: 1.25rem;
   flex-direction: column;
-  width: 100%;
-  max-width: 25rem;
   padding: 2.5rem 2rem;
   display: flex;
+  margin: 5px auto;
+  width: 100%;
 }
 
 .pricing-header {
@@ -53,6 +59,7 @@ const props = defineProps(['PricingIcon', 'cardTitle', 'color', 'benefits'])
   grid-row-gap: 0.5rem;
   flex-direction: column;
   align-items: center;
+  justify-content: space-evenly;
   display: flex;
   margin: 0;
   padding: 0;
@@ -80,7 +87,10 @@ hr {
   margin-top: 40px;
   color: #1f2c3d;
 }
-
+.pricing-price {
+  line-height: 3;
+  margin-bottom: -20px;
+}
 .pricing-price h2 {
   color: v-bind(color);
   margin: 0;
@@ -118,5 +128,18 @@ hr {
 }
 .pricing-action button:hover {
   background-color: #1f2c3d;
+}
+
+@media screen and (max-width: 768px) {
+  .pricingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+  .pricing-card {
+    width: 80vw;
+  }
 }
 </style>
