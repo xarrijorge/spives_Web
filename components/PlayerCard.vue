@@ -98,7 +98,7 @@ const props = defineProps({
   align-items: center;
   height: 60px;
   width: 125%;
-  background-color: #fcf;
+  background-color: #fff;
   border-radius: 10px;
   position: relative;
   /* right: 25px; */
