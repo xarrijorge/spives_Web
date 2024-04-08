@@ -16,8 +16,8 @@
     </b-row>
 
     <!-- Young Talents Section -->
-    <b-row class="mb-5 section-container">
-      <b-col v-for="player in talents" :key="player.id" cols="md-3">
+    <b-row class="talents section-container">
+      <b-col v-for="player in talents" :key="player.id">
         <PlayerCard :player="player" />
       </b-col>
     </b-row>
@@ -105,7 +105,7 @@ import ContactUs from '../components/ContactUs.vue'
 import ContactButton from '../components/ContactButton.vue'
 import Players from '../assets/Players'
 
-const talents = Players.splice(0, 4)
+const talents = Players.splice(0, 3)
 </script>
 
 <style scoped>
@@ -146,6 +146,12 @@ const talents = Players.splice(0, 4)
   width: 40%;
   line-height: 2;
   margin: 20px 0;
+}
+.talents {
+  display: flex;
+  justify-content: center;
+  border: 1px solid red;
+  align-items: center;
 }
 /* Custom styles for pricing cards on mobile */
 @media (max-width: 767px) {
