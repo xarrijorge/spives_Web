@@ -1,5 +1,5 @@
 <template>
-  <b-container class="pricingContainer">
+  <div>
     <b-col class="pricing-card">
       <b-col class="pricing-header">
         <div class="imgBox">
@@ -7,7 +7,7 @@
         </div>
         <h2 class="pricing-title">{{ cardTitle }}</h2>
         <div class="pricing-price">
-          <h2>$ {{ price }}<small>/mo</small></h2>
+          <h2 style="font-weight: 500">$ {{ price }}<small>/mo</small></h2>
           <p>Billed monthly</p>
         </div>
       </b-col>
@@ -24,7 +24,7 @@
         <b-button>Subscribe Now</b-button>
       </div>
     </b-col>
-  </b-container>
+  </div>
 </template>
 
 <script setup>
@@ -48,9 +48,8 @@ const props = defineProps([
   text-align: center;
   border-radius: 1.25rem;
   flex-direction: column;
-  padding: 2.5rem 2rem;
+  padding: 2rem;
   display: flex;
-  margin: 5px auto;
   width: 100%;
 }
 

@@ -38,26 +38,29 @@
       </b-col>
       <b-col cols="12" md="4">
         <PricingCard
-          PricingIcon="/images/triangle.png"
+          PricingIcon="/images/diamond.png"
           card-title="Scouts"
-          color="#00A1C0"
-          price="2"
+          color="#FF6632"
+          price="52"
           :benefits="[
-            'Access to trainers/coaches',
-            'Opportunity to meet scout',
-            'Access to create analytics',
+            'Easy access to multiple player profiles',
+            'Access to player analytics',
+            'Player info data',
+            'Connect with other coaches/scouts',
           ]" />
       </b-col>
       <b-col cols="12" md="4">
         <PricingCard
-          PricingIcon="/images/triangle.png"
+          PricingIcon="/images/hexagon.png"
           card-title="Scouts"
-          color="#00A1C0"
-          price="2"
+          color="#F8B34A"
+          price="86"
           :benefits="[
-            'Access to trainers/coaches',
-            'Opportunity to meet scout',
-            'Access to create analytics',
+            'Create club profiles',
+            'Access player profiles',
+            'Access to scouts/coaches',
+            'Access to create multiple player analytics',
+            'One-on-one consultation',
           ]" />
       </b-col>
     </b-row>
@@ -111,8 +114,7 @@ const talents = Players.splice(0, 3)
 <style scoped>
 .section-container {
   max-width: 80vw;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
 .hero-section {
@@ -150,7 +152,6 @@ const talents = Players.splice(0, 3)
 .talents {
   display: flex;
   justify-content: center;
-  border: 1px solid red;
   align-items: center;
 }
 /* Custom styles for pricing cards on mobile */

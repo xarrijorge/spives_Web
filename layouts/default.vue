@@ -78,7 +78,6 @@
 a.nav-link {
   color: #000066;
   font-weight: thin;
-  letter-spacing: 2px;
 }
 .footer {
   width: 100vw;
