@@ -4,8 +4,8 @@
       <div class="form-container">
         <h2>Contact Us</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-          ipsum arcu, tempor semper vulputate ut, volutpat eget ex.
+          Our team would love to hear from you, either as a talent or a scout,
+          your feedback matters to us"
         </p>
         <b-form @submit.prevent="submitForm">
           <b-form-group label="Name" label-for="name">
