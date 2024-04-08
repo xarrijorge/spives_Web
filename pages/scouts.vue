@@ -68,7 +68,7 @@
                 I consent to receiving notifications via email.
               </b-form-checkbox>
             </b-form-group>
-            <b-button type="submit" variant="primary">Submit</b-button>
+            <b-button class="contactButton" type="submit">Submit</b-button>
           </b-form>
         </b-col>
       </b-row>
@@ -99,6 +99,7 @@ const submitForm = () => {
   margin: 0;
   padding: 0;
   margin-top: -50px;
+  margin-bottom: 50px;
 }
 img {
   width: 100%;

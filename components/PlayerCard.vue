@@ -1,52 +1,63 @@
 <template>
   <b-card class="playerCard" bg-variant="orange">
     <div class="cardUpper">
-      <b-row>
-        <b-col cols="12">
-          <!-- Player Image -->
-          <b-img
-            :src="`/images/${player.image}`"
-            fluid
-            alt="Player Image"
-            class="playerImage" />
-        </b-col>
-      </b-row>
-      <b-row class="playerStats">
-        <!-- Percentage stat of shooting, speed, Passing, and dribbling -->
-        <b-col cols="3">
-          <p>Shooting: {{ player.stats.shooting }}%</p>
-        </b-col>
-        <b-col cols="3">
-          <p>Speed: {{ player.stats.speed }}%</p>
-        </b-col>
-        <b-col cols="3">
-          <p>Passing: {{ player.stats.passing }}%</p>
-        </b-col>
-        <b-col cols="3">
-          <p>Dribbling: {{ player.stats.dribbling }}%</p>
-        </b-col>
-      </b-row>
-      <b-row class="overallStats" bg-variant="orange">
+      <b-col cols="12">
+        <!-- Player Image -->
+        <b-img
+          :src="`/images/${player.image}`"
+          fluid
+          alt="Player Image"
+          class="playerImage" />
+      </b-col>
+      <!-- Percentage stat of shooting, speed, Passing, and dribbling -->
+      <div class="playerStats">
+        <div class="statBox">
+          <img class="statIcon" src="/images/shooting.png" />
+          <span>{{ player.stats.shooting }}%</span>
+        </div>
+        <div class="statBox">
+          <img class="statIcon" src="/images/shooting.png" />
+          <span>{{ player.stats.shooting }}%</span>
+        </div>
+        <div class="statBox">
+          <img class="statIcon" src="/images/shooting.png" />
+          <span>{{ player.stats.shooting }}%</span>
+        </div>
+        <div class="statBox">
+          <img class="statIcon" src="/images/shooting.png" />
+          <span>{{ player.stats.shooting }}%</span>
+        </div>
+      </div>
+      <div class="overallStats">
         <!-- Overall stat progress bar and football field map icon -->
-        <b-col cols="12">
-          <circle-progress :percent="70" />
-          <img
-            src="/images/fieldSVG.png"
-            alt="Football Field"
-            class="footballIcon"
-            width="80px" />
-        </b-col>
-      </b-row>
+        <div class="percentBox">
+          <circle-progress
+            percent="30"
+            fill-color="skyblue"
+            empty-color="blue"
+            size="80"
+            :border-width="12"
+            :border-bg-width="12" />
+          <div>
+            <p>Overall</p>
+            <h4>70%</h4>
+          </div>
+        </div>
+        <img
+          :src="`/images/${player.position[0]}_spivesPITCH.png`"
+          alt="Football Field"
+          class="footballIcon" />
+      </div>
     </div>
     <b-row class="playerDetails">
       <!-- Vertical list of player details -->
       <b-col cols="12">
-        <ul style="list-style-type: none">
+        <ul style="list-style-type: none; margin: 0; padding: 0">
           <li>
             <h3>{{ player.name }}</h3>
           </li>
           <li><b>Age:</b> {{ player.age }}</li>
-          <li><b>Position:</b> {{ player.position }}</li>
+          <li><b>Position:</b> {{ player.position[1] }}</li>
           <li><b>Power Foot:</b> {{ player.powerFoot }}</li>
           <li><b>Weight:</b> {{ player.weight }}</li>
           <li><b>Height:</b> {{ player.height }}</li>
@@ -57,6 +68,8 @@
 </template>
 
 <script setup>
+import 'vue3-circle-progress/dist/circle-progress.css'
+import CircleProgress from 'vue3-circle-progress'
 const props = defineProps({
   player: {
     type: Object,
@@ -69,6 +82,8 @@ const props = defineProps({
 .playerCard {
   margin-bottom: 20px;
   padding: 0;
+  position: relative;
+  width: 350px;
 }
 
 .playerImage {
@@ -77,21 +92,29 @@ const props = defineProps({
 }
 
 .playerStats {
-  display: flex;
-  font-size: 14px;
-  height: auto;
-  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 125%;
+  background-color: #fcf;
+  border-radius: 10px;
+  position: relative;
+  /* right: 25px; */
+  bottom: 100px;
 }
 .overallStats {
   display: flex;
-  justify-content: center;
+  width: 100%;
+  justify-content: space-between;
   align-items: center;
+  padding: 20px;
   font-size: 14px;
-  height: 60px;
+  margin-top: -70px;
 }
 
 .playerDetails {
-  padding: 10px;
   background-image: url('/images/croppedBG.png');
   background-repeat: no-repeat;
   background-size: contain;
@@ -100,5 +123,25 @@ const props = defineProps({
 .cardUpper {
   background-color: #ff9950;
   border-radius: 20px;
+  /* position: relative; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+}
+.statBox {
+  display: flex;
+  flex-direction: row;
+  height: max-content;
+  padding: 0 5px;
+}
+.statIcon {
+  height: 50px;
+}
+.footballIcon {
+  height: 60px;
+}
+.percentBox {
+  display: flex;
 }
 </style>

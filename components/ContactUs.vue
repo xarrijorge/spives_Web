@@ -12,27 +12,30 @@
             <b-form-input
               v-model="formData.name"
               id="name"
-              placeholder="Enter your name" />
+              placeholder="Enter your name"
+              class="mb-3" />
           </b-form-group>
           <b-form-group label="Email" label-for="email">
             <b-form-input
               v-model="formData.email"
               id="email"
               type="email"
-              placeholder="Enter your email" />
+              placeholder="Enter your email"
+              class="mb-3" />
           </b-form-group>
           <b-form-group label="Message" label-for="message">
             <b-form-textarea
               v-model="formData.message"
               id="message"
-              placeholder="Type anything..." />
+              placeholder="Type anything..."
+              class="mb-3" />
           </b-form-group>
           <b-form-group>
             <b-form-checkbox v-model="formData.acceptTerms" id="terms">
               I accept the Terms of Service and Privacy Policy.
             </b-form-checkbox>
           </b-form-group>
-          <b-button type="submit" variant="primary">Submit</b-button>
+          <b-button class="contactButton" type="submit">Submit</b-button>
         </b-form>
       </div>
     </b-col>
@@ -43,7 +46,6 @@
     </b-col>
   </b-row>
 </template>
-
 <script setup>
 import { ref } from 'vue'
 

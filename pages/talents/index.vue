@@ -53,7 +53,7 @@
     <!-- Player cards -->
     <b-container fluid>
       <b-row :gutter="80">
-        <b-col v-for="player in filteredPlayers" :key="player.id" cols="md-3">
+        <b-col v-for="player in filteredPlayers" :key="player.id" cols="md-4">
           <!-- Use PlayerCard component -->
           <PlayerCard :player="player" />
         </b-col>
@@ -123,6 +123,6 @@ watch(filters, applyFilters, { deep: true })
 
 .talentsPage {
   width: 90vw;
-  margin: 0 auto;
+  margin: 100px auto;
 }
 </style>

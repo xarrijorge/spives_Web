@@ -1,10 +1,10 @@
 const Players = [
     {
         "id": 1,
-        "name": "Player 1",
-        "nationality": "Country A",
-        "age": 24,
-        "position": "Forward",
+        "name": "Wynston Cole",
+        "nationality": "Liberian",
+        "age": 17,
+        "position": ['cf', 'Forward'],
         "gender": "Male",
         "image": "/PlayerCardImage.jpeg",
         "stats": {
@@ -20,7 +20,7 @@ const Players = [
         "name": "Player 2",
         "nationality": "Country B",
         "age": 21,
-        "position": "Forward",
+        "position": ['cf', 'Forward'],
         "gender": "Female",
         "image": "/PlayerCardImage.jpeg",
         "stats": {
@@ -36,7 +36,7 @@ const Players = [
         "name": "Player 3",
         "nationality": "Country B",
         "age": 26,
-        "position": "Forward",
+        "position": ['cf', 'Forward'],
         "gender": "Male",
         "image": "/PlayerCardImage.jpeg",
         "stats": {
@@ -52,7 +52,7 @@ const Players = [
         "name": "Player 4",
         "nationality": "Country A",
         "age": 28,
-        "position": "Defender",
+        "position": ["cb", 'Center Back'],
         "gender": "Male",
         "image": "/PlayerCardImage.jpeg",
         "stats": {
@@ -68,7 +68,7 @@ const Players = [
         "name": "Player 5",
         "nationality": "Country A",
         "age": 25,
-        "position": "Forward",
+        "position": ['cf', 'Forward'],
         "gender": "Female",
         "image": "/PlayerCardImage.jpeg",
         "stats": {
@@ -84,7 +84,7 @@ const Players = [
         "name": "Player 6",
         "nationality": "Country A",
         "age": 28,
-        "position": "Defender",
+        "position": ["cb", 'Center Back'],
         "gender": "Male",
         "image": "/PlayerCardImage.jpeg",
         "stats": {
@@ -100,7 +100,7 @@ const Players = [
         "name": "Player 7",
         "nationality": "Country B",
         "age": 25,
-        "position": "Defender",
+        "position": ["cb", 'Center Back'],
         "gender": "Male",
         "image": "/PlayerCardImage.jpeg",
         "stats": {
@@ -116,7 +116,7 @@ const Players = [
         "name": "Player 8",
         "nationality": "Country A",
         "age": 26,
-        "position": "Forward",
+        "position": ["cdm", 'Central Defensive Midfielder'],
         "gender": "Male",
         "image": "/PlayerCardImage.jpeg",
         "stats": {
@@ -132,7 +132,7 @@ const Players = [
         "name": "Player 9",
         "nationality": "Country A",
         "age": 28,
-        "position": "Defender",
+        "position": ["lb", 'Left Back'],
         "gender": "Female",
         "image": "/PlayerCardImage.jpeg",
         "stats": {
