@@ -3,7 +3,7 @@
     <h1>{{ player.name }}</h1>
     <b-row>
       <b-col>
-        <b-img :src="`/images${player.image}`" />
+        <b-img :src="player.image" />
       </b-col>
       <b-col>
         <b-row cols="sm-12">

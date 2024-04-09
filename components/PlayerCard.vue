@@ -1,103 +1,126 @@
 <template>
-  <ClientOnly>
-    <NuxtLink :to="`/talents/${player.id}`">
-      <b-card class="playerCard" bg-variant="orange">
-        <div class="cardUpper">
-          <b-col sm="12">
-            <!-- Player Image -->
-            <b-img
-              :src="`/images/${player.image}`"
-              fluid
-              alt="Player Image"
-              class="playerImage" />
-          </b-col>
-          <!-- Percentage stat of shooting, speed, Passing, and dribbling -->
-          <div class="playerStats">
-            <div class="statBox">
-              <img class="statIcon" src="/images/shooting.png" />
-              <span>{{ player.stats.shooting }}%</span>
-            </div>
-            <div class="statBox">
-              <img class="statIcon" src="/images/passing.png" />
-              <span>{{ player.stats.passing }}%</span>
-            </div>
-            <div class="statBox">
-              <img class="statIcon" src="/images/crossing.png" />
-              <span>{{ player.stats.dribbling }}%</span>
-            </div>
-            <div class="statBox">
-              <img class="statIcon" src="/images/sprinting.png" />
-              <span>{{ player.stats.shooting }}%</span>
-            </div>
-          </div>
-          <div class="overallStats">
-            <!-- Overall stat progress bar and football field map icon -->
-            <div class="percentBox">
-              <circle-progress
-                :percent="30"
-                fill-color="skyblue"
-                empty-color="blue"
-                :size="80"
-                :border-width="12"
-                :border-bg-width="12" />
-              <div>
-                <p>Overall</p>
-                <h4>70%</h4>
-              </div>
-            </div>
-            <img
-              :src="`/images/${player.position[0]}_spivesPITCH.png`"
-              alt="Football Field"
-              class="footballIcon" />
-          </div>
+  <NuxtLink :to="`/talents/${player.id}`">
+    <div class="player-card">
+      <div
+        class="image-card"
+        bg-variant="orange"
+        :style="{ 'background-image': `url(/images/PlayerCardImage2.jpeg)` }">
+        <img :src="`/images/flags/${nationality}.png`" class="flag" />
+        <div class="graphics"></div>
+      </div>
+      <div class="player-stats">
+        <div class="stat-box">
+          <img class="stat-icon" src="/images/sprinting.png" />
+          <span>?? %</span>
         </div>
-        <b-row class="playerDetails">
-          <!-- Vertical list of player details -->
-          <b-col cols="12">
-            <ul style="list-style-type: none; margin: 0; padding: 0">
-              <li>
-                <h3>{{ player.name }}</h3>
-              </li>
-              <li><b>Age:</b> {{ player.age }}</li>
-              <li><b>Position:</b> {{ player.position[1] }}</li>
-              <li><b>Power Foot:</b> {{ player.powerFoot }}</li>
-              <li><b>Weight:</b> {{ player.weight }}</li>
-              <li><b>Height:</b> {{ player.height }}</li>
-            </ul>
-          </b-col>
-        </b-row>
-      </b-card>
-    </NuxtLink>
-  </ClientOnly>
+        <div class="stat-box">
+          <img class="stat-icon" src="/images/passing.png" />
+          <span>?? %</span>
+        </div>
+        <div class="stat-box">
+          <img class="stat-icon" src="/images/shooting.png" />
+          <span>?? %</span>
+        </div>
+        <div class="stat-box">
+          <img class="stat-icon" src="/images/crossing.png" />
+          <span>?? %</span>
+        </div>
+      </div>
+      <b-row class="details">
+        <b-col>
+          <h3 class="player-name">{{ player.name }}</h3>
+          <h5>
+            Age: <span>{{ player.age || '??' }}</span>
+          </h5>
+          <h5>
+            Position: <span>{{ player.position[1] || '??' }}</span>
+          </h5>
+          <h5>
+            Weight: <span>{{ player.weight || '??' }}</span>
+          </h5>
+          <h5>
+            Height: <span>{{ player.weight || '??' }}</span>
+          </h5>
+          <h5>
+            Power Foot: <span>{{ player.weight || '??' }}</span>
+          </h5>
+          <h5>
+            Appearances: <span>{{ player.weight || '??' }}</span>
+          </h5>
+        </b-col>
+        <b-col>
+          <b-img
+            :src="`/images/${player.position[0]}_spivesPITCH.png`"
+            class="pitch" />
+        </b-col>
+      </b-row>
+    </div>
+  </NuxtLink>
 </template>
 
 <script setup>
 import 'vue3-circle-progress/dist/circle-progress.css'
-import CircleProgress from 'vue3-circle-progress'
+
 const props = defineProps({
   player: {
     type: Object,
     required: true,
   },
 })
+
+const nationality = computed(() => {
+  switch (props.player.nationality) {
+    case 'Liberian':
+      return 'lr'
+    case 'Nigerian':
+      return 'ng'
+    case 'Ghanian':
+      return 'gh'
+    default:
+      return 'gh'
+  }
+})
 </script>
 
 <style scoped>
-.playerCard {
-  margin-bottom: 20px;
-  padding: 0;
-  width: 100%;
+.player-card {
+  height: 65vh;
+  max-width: 300px;
+  background-color: #ffc;
+  padding: 2% 4%;
+  border-radius: 50px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-
-.playerImage {
-  border-radius: 10px 10px 0 0;
-  max-width: 100%;
+.image-card {
+  min-height: 300px;
+  height: 70%;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  position: relative;
 }
-
-.playerStats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 5px;
+.player-stats {
+  position: absolute;
+  width: 350px;
+  height: 70px;
+  background-color: #ffc;
+  border-radius: 20px;
+  bottom: 40%;
+  margin: 0 auto;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* .player-stats {
+  display: flex;
   justify-content: center;
   align-items: center;
   height: auto;
@@ -105,44 +128,65 @@ const props = defineProps({
   background-color: #fff;
   border-radius: 10px;
   padding: 10px;
+} */
+
+.stat-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 2px;
+}
+.stat-box span {
+  align-self: flex-start;
 }
 
-.overallStats {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  font-size: 14px;
-}
-
-.playerDetails {
-  background-image: url('/images/croppedBG.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: top 95px left 170px;
-  padding: 20px;
-}
-.cardUpper {
-  background-color: #ff9950;
-  border-radius: 20px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: auto;
-}
-.statBox {
-  display: flex;
-  flex-direction: row;
-  height: max-content;
-}
-.statIcon {
+.stat-icon {
   height: 50px;
 }
-.footballIcon {
-  height: 60px;
+.flag {
+  height: 30px;
+  margin-right: auto;
+  position: absolute;
+  top: 20px;
+  left: 30px;
 }
-.percentBox {
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.stats-box .stat-icon {
+  max-width: 100%;
+  position: relative;
+}
+.details {
   display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+.details * {
+  font-size: 0.8vw;
+}
+.details .player-name {
+  font-size: 1.3em;
+  font-weight: 700;
+  margin: 5px 0;
+}
+.details span {
+  color: #ff9956;
+}
+.details h5 {
+  line-height: 1.5;
+}
+.pitch {
+  transform: rotate(-90deg);
+  height: 100%;
+}
+@media (max-width: 720px) {
+  .player-card {
+    margin-bottom: 10px;
+  }
+  .details * {
+    font-size: 0.8rem;
+  }
 }
 </style>

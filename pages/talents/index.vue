@@ -63,10 +63,12 @@
 </template>
 
 <script setup>
+import { useMainStore } from '@/stores/main'
 import PlayerCard from '~/components/PlayerCard.vue'
-import Players from '~/assets/Players'
 
-const players = ref(Players)
+const store = useMainStore()
+
+const { players } = storeToRefs(store)
 const filters = ref({
   nationality: '',
   age: '',
