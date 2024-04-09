@@ -2,8 +2,8 @@
   <div class="talentsPage">
     <!-- Filter dropdowns -->
     <b-container fluid>
-      <b-row class="mb-3" align-h="end">
-        <b-col cols="2">
+      <b-row class="mb-3" align-h="end" align-v="center">
+        <b-col cols="12" md="2">
           <b-form-group label="Nationality" label-for="nationality-select">
             <b-form-select
               id="nationality-select"
@@ -14,7 +14,7 @@
             </b-form-select>
           </b-form-group>
         </b-col>
-        <b-col cols="1">
+        <b-col cols="12" md="1">
           <b-form-group label="Age" label-for="age-select">
             <b-form-select
               id="age-select"
@@ -25,7 +25,7 @@
             </b-form-select>
           </b-form-group>
         </b-col>
-        <b-col cols="1">
+        <b-col cols="12" md="1">
           <b-form-group label="Gender" label-for="gender-select">
             <b-form-select
               id="gender-select"
@@ -36,7 +36,7 @@
             </b-form-select>
           </b-form-group>
         </b-col>
-        <b-col cols="2">
+        <b-col cols="12" md="2">
           <b-form-group label="Position" label-for="position-select">
             <b-form-select
               id="position-select"
@@ -77,7 +77,7 @@ const filters = ref({
 const filteredPlayers = ref(players.value)
 
 const distinctValues = (key) => {
-  return [...new Set(players.value.map((player) => player[key]))]
+  return [...new Set(players.value.flatMap((player) => player[key]))]
 }
 
 const nationalityOptions = distinctValues('nationality').map((value) => ({
@@ -94,7 +94,7 @@ const genderOptions = distinctValues('gender').map((value) => ({
 }))
 const positionOptions = distinctValues('position').map((value) => ({
   value,
-  text: value,
+  text: Array.isArray(value) ? value[0] : value,
 }))
 
 const applyFilters = () => {
