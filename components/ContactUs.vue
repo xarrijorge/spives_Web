@@ -41,7 +41,10 @@
     </b-col>
     <b-col md="6">
       <div class="image-container">
-        <img src="/images/contact_us_iconspives.png" alt="Contact Image" />
+        <img
+          src="/images/contact_us_iconspives.png"
+          alt="Contact Image"
+          class="contactImage" />
       </div>
     </b-col>
   </b-row>
@@ -78,8 +81,8 @@ const submitForm = () => {
 .image-container {
   text-align: center;
 }
-.image-container img {
-  max-width: 100%;
+.contactImage {
+  max-width: 80%;
 }
 
 @media (max-width: 768px) {

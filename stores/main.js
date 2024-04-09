@@ -1,3 +1,13 @@
+import { defineStore } from 'pinia'
+
+export const useMainStore = defineStore('main', () => {
+    const players = ref([...Players])
+
+    const getPlayer = (id) => players.value.filter(player => player.id === id)
+
+    return { players, getPlayer }
+})
+
 const Players = [
     {
         "id": 1,
@@ -144,4 +154,3 @@ const Players = [
         }
     },
 ];
-export default Players

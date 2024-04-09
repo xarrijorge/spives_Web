@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     '@nuxtjs/google-fonts',
     '@bootstrap-vue-next/nuxt',
     '@vesp/nuxt-fontawesome',
+    "@pinia/nuxt"
   ],
   fontawesome: {
     icons: {
@@ -14,7 +15,7 @@ export default defineNuxtConfig({
   },
   googleFonts: {
     families: {
-      Montserrat: [100, 400, 500, 700],
+      Montserrat: [100, 400, 500, 700, 800, 900],
     },
   },
   css: ['bootstrap/dist/css/bootstrap.min.css'],

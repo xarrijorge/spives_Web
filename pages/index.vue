@@ -1,7 +1,7 @@
 <template>
   <b-container fluid>
     <!-- Hero Section -->
-    <b-row class="mb-5 hero-section">
+    <b-row class="mb-5 section-container hero-section">
       <b-col cols="12" md="5" class="hero-text">
         <h1>you deserve to be seen..</h1>
         <p>
@@ -11,7 +11,11 @@
         <ContactButton />
       </b-col>
       <b-col cols="12" md="7">
-        <b-img src="/images/HomeHero.png" fluid alt="Nuxt Logo" />
+        <b-img
+          class="heroImage"
+          src="/images/HomeHero.png"
+          fluid
+          alt="Nuxt Logo" />
       </b-col>
     </b-row>
 
@@ -113,22 +117,27 @@ const talents = Players.splice(0, 3)
 
 <style scoped>
 .section-container {
-  max-width: 80vw;
   margin: 0 auto;
+  padding: 0 5%;
 }
 
 .hero-section {
   max-width: 100vw;
   height: calc(100vh - 50px);
   align-items: center;
+  margin-top: -2%;
   padding: 20px 4%;
+}
+
+.hero-text {
+  padding: 0 50px;
 }
 
 .hero-text h1 {
   color: #000066;
   text-transform: uppercase;
   font-size: 3.5rem;
-  font-weight: 700;
+  font-weight: 800;
 }
 .hero-text p {
   font-size: 1rem;
@@ -136,6 +145,9 @@ const talents = Players.splice(0, 3)
   line-height: 1.5;
   color: #5f6570;
   margin: 20px 0;
+}
+.heroImage {
+  max-width: 90%;
 }
 .team-section {
   text-align: center;
