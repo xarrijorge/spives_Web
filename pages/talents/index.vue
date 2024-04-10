@@ -1,64 +1,63 @@
 <template>
   <div class="talentsPage">
     <!-- Filter dropdowns -->
-    <b-container fluid>
-      <b-row class="mb-3" align-h="end" align-v="center">
-        <b-col cols="12" md="2">
-          <b-form-group label="Nationality" label-for="nationality-select">
-            <b-form-select
-              id="nationality-select"
-              v-model="filters.nationality"
-              :options="nationalityOptions"
-              placeholder="Select nationality">
-              <option value="">All</option>
-            </b-form-select>
-          </b-form-group>
-        </b-col>
-        <b-col cols="12" md="1">
-          <b-form-group label="Age" label-for="age-select">
-            <b-form-select
-              id="age-select"
-              v-model="filters.age"
-              :options="ageOptions"
-              placeholder="Select age">
-              <option value="">All</option>
-            </b-form-select>
-          </b-form-group>
-        </b-col>
-        <b-col cols="12" md="1">
-          <b-form-group label="Gender" label-for="gender-select">
-            <b-form-select
-              id="gender-select"
-              v-model="filters.gender"
-              :options="genderOptions"
-              placeholder="Select gender">
-              <option value="">All</option>
-            </b-form-select>
-          </b-form-group>
-        </b-col>
-        <b-col cols="12" md="2">
-          <b-form-group label="Position" label-for="position-select">
-            <b-form-select
-              id="position-select"
-              v-model="filters.position"
-              :options="positionOptions"
-              placeholder="Select position">
-              <option value="">All</option>
-            </b-form-select>
-          </b-form-group>
-        </b-col>
-      </b-row>
-    </b-container>
+    <b-row class="filter-box">
+      <b-col cols="12" md="4">
+        <b-form-group label="Nationality" label-for="nationality-select">
+          <b-form-select
+            id="nationality-select"
+            v-model="filters.nationality"
+            :options="nationalityOptions"
+            placeholder="Select nationality">
+            <option value="">All</option>
+          </b-form-select>
+        </b-form-group>
+      </b-col>
+      <b-col cols="12" md="2">
+        <b-form-group label="Age" label-for="age-select">
+          <b-form-select
+            id="age-select"
+            v-model="filters.age"
+            :options="ageOptions"
+            placeholder="Select age">
+            <option value="">All</option>
+          </b-form-select>
+        </b-form-group>
+      </b-col>
+      <b-col cols="12" md="2">
+        <b-form-group label="Gender" label-for="gender-select">
+          <b-form-select
+            id="gender-select"
+            v-model="filters.gender"
+            :options="genderOptions"
+            placeholder="Select gender">
+            <option value="">All</option>
+          </b-form-select>
+        </b-form-group>
+      </b-col>
+      <b-col cols="12" md="4">
+        <b-form-group label="Position" label-for="position-select">
+          <b-form-select
+            id="position-select"
+            v-model="filters.position"
+            :options="positionOptions"
+            placeholder="Select position">
+            <option value="">All</option>
+          </b-form-select>
+        </b-form-group>
+      </b-col>
+    </b-row>
 
     <!-- Player cards -->
-    <b-container fluid>
-      <b-row :gutter="80">
-        <b-col v-for="player in filteredPlayers" :key="player.id" cols="md-4">
-          <!-- Use PlayerCard component -->
-          <PlayerCard :player="player" />
-        </b-col>
-      </b-row>
-    </b-container>
+    <div class="talents">
+      <PlayerCard
+        v-for="player in filteredPlayers"
+        :key="player.id"
+        cols="md-4"
+        :player="player" />
+      <!-- Use PlayerCard component -->
+      <!-- <PlayerCard :player="player" /> -->
+    </div>
   </div>
 </template>
 
@@ -125,6 +124,25 @@ watch(filters, applyFilters, { deep: true })
 
 .talentsPage {
   width: 90vw;
-  margin: 100px auto;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+}
+.filter-box {
+  align-self: center;
+  width: 50%;
+  margin-bottom: 50px;
+}
+.talents {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  column-gap: 100px;
+}
+@media (max-width: 767px) {
+  .talents {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 </style>

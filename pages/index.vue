@@ -20,11 +20,9 @@
     </b-row>
 
     <!-- Young Talents Section -->
-    <b-row class="talents section-container">
-      <b-col v-for="player in talents" :key="player.id">
-        <PlayerCard :player="player" />
-      </b-col>
-    </b-row>
+    <div class="talents">
+      <PlayerCard v-for="player in talents" :key="player.id" :player="player" />
+    </div>
 
     <!-- Pricing Plans Section -->
     <b-row class="mb-5 section-container">
@@ -117,7 +115,7 @@ const talents = Players.splice(0, 3)
 
 <style scoped>
 .section-container {
-  margin: 0 auto;
+  margin: 50px auto;
   padding: 0 5%;
 }
 
@@ -163,13 +161,19 @@ const talents = Players.splice(0, 3)
 }
 .talents {
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  align-items: center;
+  column-gap: 100px;
 }
+
 /* Custom styles for pricing cards on mobile */
 @media (max-width: 767px) {
   .team-section .text {
     width: 100%;
+  }
+  .talents {
+    flex-direction: column;
+    align-items: center;
   }
 }
 </style>

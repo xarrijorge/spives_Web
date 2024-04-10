@@ -85,7 +85,7 @@ const nationality = computed(() => {
 <style scoped>
 .player-card {
   height: 65vh;
-  max-width: 300px;
+  width: 300px;
   background-color: #ffc;
   padding: 2% 4%;
   border-radius: 50px;

@@ -51,6 +51,7 @@ const props = defineProps([
   padding: 2rem;
   display: flex;
   width: 100%;
+  margin-bottom: 10px;
 }
 
 .pricing-header {

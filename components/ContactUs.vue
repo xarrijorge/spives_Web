@@ -85,9 +85,10 @@ const submitForm = () => {
   max-width: 80%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 720px) {
   .image-container {
     margin-top: 20px;
+    display: none;
   }
 }
 </style>
