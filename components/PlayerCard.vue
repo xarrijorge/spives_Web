@@ -26,8 +26,8 @@
           <span>?? %</span>
         </div>
       </div>
-      <b-row class="details">
-        <b-col>
+      <div class="details">
+        <div>
           <h3 class="player-name">{{ player.name }}</h3>
           <h5>
             Age: <span>{{ player.age || '??' }}</span>
@@ -47,13 +47,9 @@
           <h5>
             Appearances: <span>{{ player.weight || '??' }}</span>
           </h5>
-        </b-col>
-        <b-col>
-          <b-img
-            :src="`/images/${player.position[0]}_spivesPITCH.png`"
-            class="pitch" />
-        </b-col>
-      </b-row>
+        </div>
+        <img :src="playerPositionImage" class="pitch" />
+      </div>
     </div>
   </NuxtLink>
 </template>
@@ -80,6 +76,9 @@ const nationality = computed(() => {
       return 'gh'
   }
 })
+const playerPositionImage = computed(
+  () => `/images/${props.player.position[0]}_spivesPITCH.png`
+)
 </script>
 
 <style scoped>
@@ -179,7 +178,8 @@ a {
 }
 .pitch {
   transform: rotate(-90deg);
-  height: 100%;
+  max-width: 45%;
+  margin-left: auto;
 }
 @media (max-width: 720px) {
   .player-card {
