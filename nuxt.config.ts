@@ -6,8 +6,12 @@ export default defineNuxtConfig({
     '@nuxtjs/google-fonts',
     '@bootstrap-vue-next/nuxt',
     '@vesp/nuxt-fontawesome',
-    "@pinia/nuxt"
+    '@pinia/nuxt',
+    'nuxt-gtag',
   ],
+  gtag: {
+    id: 'G-HES2CSF4VG',
+  },
   fontawesome: {
     icons: {
       brands: ['twitter', 'tiktok', 'instagram', 'linkedin'],
