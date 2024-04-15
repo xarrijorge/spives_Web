@@ -12,6 +12,7 @@ const Players = [
     {
         "id": 1,
         "name": "Wynston Cole",
+        "nickname": "wyndrick",
         "nationality": "Liberian",
         "age": 17,
         "position": ['cf', 'ss'],
@@ -28,12 +29,15 @@ const Players = [
     },
     {
         "id": 2,
-        "name": "Player 2",
-        "nationality": "Country B",
-        "age": 21,
-        "position": ['cf', 'Forward'],
+        "name": "Richard Osei Asante",
+        "nickname": "Skillful",
+        "nationality": "Ghana",
+        "age": 15,
+        "position": ['RM'],
+        'weight': '48.9kg',
+        "foot": 'Right',
         "gender": "Female",
-        "image": "/images/PlayerCardImage2.jpeg",
+        "image": "/images/talents/RichardOseiAsante.png",
         "stats": {
             "shooting": 80,
             "speed": 85,
@@ -45,6 +49,7 @@ const Players = [
     {
         "id": 3,
         "name": "Besard Oppong",
+        "nickname": "Baby Messi",
         "nationality": "Ghanian",
         "age": 13,
         "weight": '42.2kg',

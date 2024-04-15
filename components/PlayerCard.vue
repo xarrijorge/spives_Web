@@ -28,12 +28,12 @@
       </div>
       <div class="details">
         <div>
-          <h3 class="player-name">{{ player.name }}</h3>
+          <h3 class="player-name">{{ player.nickname }}</h3>
           <h5>
             Age: <span>{{ player.age || '??' }}</span>
           </h5>
           <h5>
-            Position: <span>{{ player.position[1] || '??' }}</span>
+            Position: <span>{{ player.position[0] || '??' }}</span>
           </h5>
           <h5>
             Weight: <span>{{ player.weight || '??' }}</span>
@@ -85,7 +85,8 @@ const playerPositionImage = computed(
 .player-card {
   height: 65vh;
   width: 300px;
-  background-color: #ffc;
+  border: 5px solid #000066;
+  background-color: #fff;
   padding: 2% 4%;
   border-radius: 50px;
   position: relative;
@@ -109,7 +110,7 @@ const playerPositionImage = computed(
   position: absolute;
   width: 350px;
   height: 70px;
-  background-color: #ffc;
+  background-color: #fff;
   border-radius: 20px;
   bottom: 40%;
   margin: 0 auto;

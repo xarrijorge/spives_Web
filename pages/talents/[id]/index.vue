@@ -242,7 +242,7 @@ onMounted(() => {})
   /* width: 450px; */
   width: auto;
   height: 50vh;
-  border: 12px solid #ff9956;
+  border: 8px solid #fff;
   border-radius: 30px;
   margin-right: 50px;
 }
