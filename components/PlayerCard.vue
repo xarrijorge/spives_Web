@@ -87,6 +87,7 @@ const playerPositionImage = computed(
   width: 300px;
   border: 5px solid #000066;
   background-color: #fff;
+  color: #000066;
   padding: 2% 4%;
   border-radius: 50px;
   position: relative;

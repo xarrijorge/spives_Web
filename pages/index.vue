@@ -121,6 +121,9 @@ const talents = players
 </script>
 
 <style scoped>
+* {
+  color: #000066;
+}
 .section-container {
   margin: 50px auto;
   padding: 0 5%;

@@ -3,7 +3,7 @@
     <b-container class="top">
       <div class="flag-row">
         <b-img :src="`/images/flags/${playerFlag}.png`"></b-img>
-        <h1>{{ player.name }}</h1>
+        <h1>{{ player.nickname }}</h1>
       </div>
       <div class="playerImage-row">
         <b-img :src="player.image" class="player-img"></b-img>
