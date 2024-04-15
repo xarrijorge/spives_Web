@@ -116,7 +116,7 @@ const Players = [
         "name": "Player 8",
         "nationality": "Country A",
         "age": 26,
-        "position": ["cdm", 'Central Defensive Midfielder'],
+        "position": ["cdm", 'cm', 'lm', 'rm', 'cf', 'Forward'],
         "gender": "Male",
         "image": "/PlayerCardImage.jpeg",
         "stats": {

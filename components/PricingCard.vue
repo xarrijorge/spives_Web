@@ -21,7 +21,7 @@
         </ul>
       </div>
       <div class="pricing-action">
-        <b-button>Subscribe Now</b-button>
+        <b-button>{{ buttonText }}</b-button>
       </div>
     </b-col>
   </div>
@@ -36,7 +36,10 @@ const props = defineProps([
   'color',
   'benefits',
   'price',
+  'buttontext',
+  'buttoncolor',
 ])
+const buttonText = props.buttontext || 'Contact Us'
 </script>
 
 <style scoped>
@@ -121,7 +124,7 @@ hr {
 }
 .pricing-action button {
   width: 100%;
-  background-color: #ff6632;
+  background-color: v-bind(buttoncolor);
   border: none;
   height: 48px;
   padding: 12px 28px;

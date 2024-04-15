@@ -15,6 +15,7 @@ export default defineNuxtConfig({
   fontawesome: {
     icons: {
       brands: ['twitter', 'tiktok', 'instagram', 'linkedin'],
+      solid: ['binoculars', 'futbol'],
     },
   },
   googleFonts: {

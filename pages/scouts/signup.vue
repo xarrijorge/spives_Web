@@ -3,7 +3,7 @@
     <b-container fluid>
       <!-- Hero Section -->
       <b-row>
-        <b-col cols="12">
+        <b-col cols="12" sm="12">
           <img
             src="/images/scoutsHero.jpg"
             alt="Hero Image"
@@ -12,7 +12,7 @@
       </b-row>
 
       <!-- Scout Signup Form -->
-      <b-row class="justify-content-center mt-5">
+      <b-row class="justify-content-center mt-5 sm-12">
         <b-col cols="4">
           <h2 class="mb-4">Scout Signup</h2>
           <b-form @submit.prevent="submitForm">

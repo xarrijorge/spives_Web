@@ -29,8 +29,9 @@
       <b-col cols="12" md="4">
         <PricingCard
           PricingIcon="/images/triangle.png"
-          card-title="Scouts"
+          card-title="Talents"
           color="#00A1C0"
+          buttoncolor="#ff6632"
           price="2"
           :benefits="[
             'Access to trainers/coaches',
@@ -43,6 +44,7 @@
           PricingIcon="/images/diamond.png"
           card-title="Scouts"
           color="#FF6632"
+          buttoncolor="#ff6632"
           price="52"
           :benefits="[
             'Easy access to multiple player profiles',
@@ -54,9 +56,11 @@
       <b-col cols="12" md="4">
         <PricingCard
           PricingIcon="/images/hexagon.png"
-          card-title="Scouts"
+          card-title="Football Clubs"
           color="#F8B34A"
+          buttoncolor="#000066"
           price="86"
+          buttontext="Coming Soon"
           :benefits="[
             'Create club profiles',
             'Access player profiles',
@@ -105,12 +109,15 @@
 </template>
 
 <script setup>
+import { useMainStore } from '@/stores/main'
 import PricingCard from '../components/PricingCard.vue'
 import ContactUs from '../components/ContactUs.vue'
 import ContactButton from '../components/ContactButton.vue'
-import Players from '../assets/Players'
 
-const talents = Players.splice(0, 3)
+const store = useMainStore()
+const { players } = storeToRefs(store)
+
+const talents = players
 </script>
 
 <style scoped>

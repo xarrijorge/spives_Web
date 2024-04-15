@@ -4,7 +4,7 @@
       <div
         class="image-card"
         bg-variant="orange"
-        :style="{ 'background-image': `url(/images/PlayerCardImage2.jpeg)` }">
+        :style="{ 'background-image': `url(${player.image})` }">
         <img :src="`/images/flags/${nationality}.png`" class="flag" />
         <div class="graphics"></div>
       </div>
@@ -39,13 +39,13 @@
             Weight: <span>{{ player.weight || '??' }}</span>
           </h5>
           <h5>
-            Height: <span>{{ player.weight || '??' }}</span>
+            Height: <span>{{ player.height || '??' }}</span>
           </h5>
           <h5>
-            Power Foot: <span>{{ player.weight || '??' }}</span>
+            Power Foot: <span>{{ player.foot || '??' }}</span>
           </h5>
           <h5>
-            Appearances: <span>{{ player.weight || '??' }}</span>
+            Appearances: <span>{{ player.appreances || '??' }}</span>
           </h5>
         </div>
         <img :src="playerPositionImage" class="pitch" />
