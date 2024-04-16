@@ -21,7 +21,10 @@
 
     <!-- Young Talents Section -->
     <div class="talents">
-      <PlayerCard v-for="player in talents" :key="player.id" :player="player" />
+      <PlayerCard
+        v-for="player in talents.slice(0, 3)"
+        :key="player.id"
+        :player="player" />
     </div>
 
     <!-- Pricing Plans Section -->

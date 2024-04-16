@@ -136,6 +136,8 @@ watch(filters, applyFilters, { deep: true })
 .talents {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 20px;
   justify-content: center;
   column-gap: 100px;
 }
