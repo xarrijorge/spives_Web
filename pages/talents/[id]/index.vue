@@ -1,68 +1,68 @@
 <template>
   <main>
-    <b-container class="top">
-      <div class="flag-row">
-        <b-img :src="`/images/flags/${playerFlag}.png`"></b-img>
-        <h1>{{ player.nickname }}</h1>
-      </div>
-      <div class="playerImage-row">
-        <b-img :src="player.image" class="player-img"></b-img>
-        <div class="details">
-          <h5>
-            Age: <span>{{ player.age || '??' }}</span>
-          </h5>
-          <h5>
-            Position: <span>{{ player.position[1] || '??' }}</span>
-          </h5>
-          <h5>
-            Weight: <span>{{ player.weight || '??' }}</span>
-          </h5>
-          <h5>
-            Height: <span>{{ player.weight || '??' }}</span>
-          </h5>
-          <h5>
-            Power Foot: <span>{{ player.weight || '??' }}</span>
-          </h5>
-          <h5>
-            Appearances: <span>{{ player.weight || '??' }}</span>
-          </h5>
+    <div class="top">
+      <div>
+        <div class="flag-row">
+          <b-img :src="`/images/flags/${playerFlag}.png`"></b-img>
+          <h1>{{ player.nickname }}</h1>
         </div>
-        <div class="gallery-box">
-          <div>
-            <a href="https://youtube.com/spives" target="_blank">
-              <b-img
-                src="/images/profile/galleryicon.png"
-                class="gallery-icon" />
-            </a>
-            <span>gallery</span>
+        <div class="playerImage-row">
+          <b-img :src="player.image" class="player-img"></b-img>
+          <div class="details">
+            <h5>
+              Age: <span>{{ player.age || '??' }}</span>
+            </h5>
+            <h5>
+              Position: <span>{{ player.position || '??' }}</span>
+            </h5>
+            <h5>
+              Weight: <span>{{ player.weight || '??' }}</span>
+            </h5>
+            <h5>
+              Height: <span>{{ player.height || '??' }}</span>
+            </h5>
+            <h5>
+              Power Foot: <span>{{ player.foot || '??' }}</span>
+            </h5>
+            <h5>
+              Appearances: <span>{{ player.appearance || '??' }}</span>
+            </h5>
           </div>
-          <b-img src="/images/profile/newpitch.png" class="pitch-icon" />
+        </div>
+        <div class="stats-row">
+          <div class="player-stats">
+            <b-col class="stat-box">
+              <img class="stat-icon" src="/images/sprinting.png" />
+              <span>?? %</span>
+            </b-col>
+            <b-col class="stat-box">
+              <img class="stat-icon" src="/images/passing.png" />
+              <span>?? %</span>
+            </b-col>
+            <b-col class="stat-box">
+              <img class="stat-icon" src="/images/shooting.png" />
+              <span>?? %</span>
+            </b-col>
+            <b-col class="stat-box">
+              <img class="stat-icon" src="/images/crossing.png" />
+              <span>?? %</span>
+            </b-col>
+          </div>
+          <div class="position-box">
+            <b-col class="position">{{ player.position }}</b-col>
+          </div>
         </div>
       </div>
-      <div class="stats-row">
-        <div class="player-stats">
-          <b-col class="stat-box">
-            <img class="stat-icon" src="/images/sprinting.png" />
-            <span>?? %</span>
-          </b-col>
-          <b-col class="stat-box">
-            <img class="stat-icon" src="/images/passing.png" />
-            <span>?? %</span>
-          </b-col>
-          <b-col class="stat-box">
-            <img class="stat-icon" src="/images/shooting.png" />
-            <span>?? %</span>
-          </b-col>
-          <b-col class="stat-box">
-            <img class="stat-icon" src="/images/crossing.png" />
-            <span>?? %</span>
-          </b-col>
+      <div class="gallery-box">
+        <div>
+          <a href="https://youtube.com/spives" target="_blank">
+            <b-img src="/images/profile/galleryicon.png" class="gallery-icon" />
+          </a>
+          <span>gallery</span>
         </div>
-        <div class="position-box">
-          <b-col class="position">{{ player.position[0] }}</b-col>
-        </div>
+        <b-img src="/images/profile/newpitch.png" class="pitch-icon" />
       </div>
-    </b-container>
+    </div>
     <b-container class="bottom">
       <p class="bio">
         <span>Biography</span> Lorem ipsum dolor sit amet consectetur
@@ -151,8 +151,13 @@ const playerFlag = computed(() => {
       return 'gh'
   }
 })
-player.value = store.getPlayer(Number(route.params.id))[0]
-onMounted(() => {})
+const { players } = storeToRefs(store)
+
+player.value = store.getPlayer(route.params.id)[0]
+
+onMounted(() => {
+  console.log(player)
+})
 </script>
 
 <style>
@@ -255,7 +260,6 @@ onMounted(() => {})
 
 .flag-row {
   height: auto;
-  margin: 20px 0;
   padding: 0;
   display: flex;
   align-items: center;
@@ -273,9 +277,9 @@ onMounted(() => {})
 .gallery-box {
   display: flex;
   flex-direction: column;
-  margin: auto;
-  justify-content: space-between;
   padding: 0;
+  margin-left: auto;
+  margin-right: 20%;
 }
 .gallery-box span {
   font-size: 25px;
@@ -283,13 +287,14 @@ onMounted(() => {})
 .gallery-icon {
   width: 50px;
   margin: 10px;
-  margin-left: 0;
 }
 .pitch-icon {
   width: 150px;
 }
 .top {
   padding: 0;
+  margin-top: 100px;
+  display: flex;
 }
 .bottom {
   padding: 0;

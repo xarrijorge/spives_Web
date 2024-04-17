@@ -414,7 +414,8 @@ const Players = [
         passing: 0,
         dribbling: 0,
         overall: 0
-    }
+    },
+    nationality: "Ghanian",
 }));
 
 

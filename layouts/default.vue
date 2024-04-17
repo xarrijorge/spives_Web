@@ -119,8 +119,9 @@ a.nav-link {
 }
 </style>
 <script setup>
-import ContactButton from '../components/ContactButton.vue'
+const route = useRoute()
+
 onMounted(() => {
-  console.log('mounted')
+  console.log(route.params)
 })
 </script>

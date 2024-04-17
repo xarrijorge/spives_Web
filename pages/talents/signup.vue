@@ -1,5 +1,5 @@
 <template>
-  <b-container>
+  <b-container fluid>
     <b-row class="justify-content-center mt-5">
       <b-col cols="4">
         <b-form @submit.prevent="submitForm">
@@ -24,19 +24,17 @@
               required></b-form-input>
           </b-form-group>
           <b-form-group label="Position:" label-for="position" required>
-            <b-dropdown variant="outline-secondary" text="Select positions">
-              <b-dropdown-item
-                v-for="(option, index) in positionOptions"
-                :key="index">
-                <b-form-checkbox
-                  v-model="formData.position"
-                  :value="option.value"
-                  :id="'position-' + index">
-                  {{ option.text }}
-                </b-form-checkbox>
-              </b-dropdown-item>
-            </b-dropdown>
-            <small class="form-text text-muted">Select all that apply</small>
+            <b-form-checkbox-group
+              v-model="formData.position"
+              id="position"
+              :options="positionOptions"
+              :aria-describedby="'position-' + positionOptions.length"
+              stacked></b-form-checkbox-group>
+            <small
+              :id="'position-' + positionOptions.length"
+              class="form-text text-muted"
+              >Select all that apply</small
+            >
           </b-form-group>
           <b-form-group label="Gender:" label-for="gender" required>
             <div>
