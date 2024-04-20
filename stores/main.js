@@ -4,9 +4,17 @@ import Players from '@/assets/Players.js'
 export const useMainStore = defineStore('main', () => {
     const players = ref([...Players])
 
-    const getPlayer = (id) => players.value.filter(player => player.id === id)
+    const getPlayerByID = (id) => players.value.filter(player => player.id === id)
+    const findByIdAndUpdate = (id, newData) => {
+        const index = players.value.findIndex(player => player.id === id);
+        if (index !== -1) {
+            // Update the player's data
+            players.value[index] = { ...players.value[index], ...newData };
+        }
+    }
 
-    return { players, getPlayer }
+
+    return { players, getPlayerByID, findByIdAndUpdate }
 })
 
 

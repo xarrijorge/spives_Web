@@ -85,6 +85,7 @@ const playerPositionImage = computed(
 .player-card {
   height: 65vh;
   width: 300px;
+  min-width: max-content;
   border: 5px solid #000066;
   background-color: #fff;
   color: #000066;

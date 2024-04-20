@@ -151,9 +151,8 @@ const playerFlag = computed(() => {
       return 'gh'
   }
 })
-const { players } = storeToRefs(store)
 
-player.value = store.getPlayer(route.params.id)[0]
+player.value = store.getPlayerByID(route.params.id)[0]
 
 onMounted(() => {
   console.log(player)

@@ -1,7 +1,7 @@
 <template>
   <b-container fluid>
     <b-row class="justify-content-center mt-5">
-      <b-col cols="4">
+      <b-col xs="12" sm="10" md="8" lg="6">
         <b-form @submit.prevent="submitForm">
           <b-form-group label="Name:" label-for="name" required>
             <b-form-input
