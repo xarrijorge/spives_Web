@@ -1,7 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  components: true,
   devtools: { enabled: true },
-
+  runtimeConfig: {
+    public: {
+      baseURL: 'https://spives.onrender.com',
+    },
+  },
   modules: [
     '@nuxtjs/google-fonts',
     '@bootstrap-vue-next/nuxt',
