@@ -90,7 +90,7 @@
             <b-img src="/images/PauloProfile.jpeg" fluid />
           </b-col>
           <b-col cols="6" md="3">
-            <b-img src="/images/XarriProfile.jpeg" fluid />
+            <b-img src="/images/ushaProfile.jpeg" fluid />
           </b-col>
           <b-col cols="6" md="3">
             <b-img src="/images/CaptainProfile.jpeg" fluid />
