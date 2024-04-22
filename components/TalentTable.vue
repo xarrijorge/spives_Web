@@ -12,7 +12,7 @@
         style="width: 50px; height: 50px; border-radius: 50%" />
     </template>
     <template v-slot:cell(name)="row">
-      <b-link :to="`/talents/${row.item.id}`">{{ row.item.name }}</b-link>
+      <NuxtLink :to="`/talents/${row.item.id}`">{{ row.item.name }}</NuxtLink>
     </template>
   </b-table>
 </template>
@@ -25,14 +25,24 @@ const props = defineProps({
 })
 
 const fields = [
-  { key: 'thumbnail', label: 'Thumbnail' },
-  { key: 'name', label: 'Name' },
-  { key: 'age', label: 'Age' },
-  { key: 'position', label: 'Position' },
-  { key: 'height', label: 'Height' },
-  { key: 'weight', label: 'Weight' },
-  { key: 'club', label: 'Club' },
-  { key: 'coach', label: 'Coach' },
-  { key: 'foot', label: 'Foot' },
+  {
+    key: 'thumbnail',
+    label: 'Image',
+    align: 'center',
+    tdClass: 'align-middle',
+  }, // Align center and vertically center thumbnail
+  { key: 'name', label: 'Name', align: 'center', tdClass: 'align-middle' }, // Align center and vertically center name
+  { key: 'age', label: 'Age', align: 'center', tdClass: 'align-middle' }, // Align center and vertically center age
+  {
+    key: 'position',
+    label: 'Position',
+    align: 'center',
+    tdClass: 'align-middle',
+  }, // Align center and vertically center position
+  { key: 'height', label: 'Height', align: 'center', tdClass: 'align-middle' }, // Align center and vertically center height
+  { key: 'weight', label: 'Weight', align: 'center', tdClass: 'align-middle' }, // Align center and vertically center weight
+  { key: 'club', label: 'Club', align: 'center', tdClass: 'align-middle' }, // Align center and vertically center club
+  { key: 'coach', label: 'Coach', align: 'center', tdClass: 'align-middle' }, // Align center and vertically center coach
+  { key: 'foot', label: 'Foot', align: 'center', tdClass: 'align-middle' }, // Align center and vertically center foot
 ]
 </script>

@@ -1,16 +1,18 @@
 <template>
-  <div>
-    <h1>Hello {{ store.user.name }}</h1>
-    <b-row>
-      <b-col>
-        <h3>You are currently watching {{ playerData.length }} talents</h3>
-      </b-col>
-      <b-col>
-        <b-button @click="toggleView" variant="primary">
-          {{ listView ? 'Switch to Card View' : 'Switch to List View' }}
-        </b-button>
-      </b-col>
-    </b-row>
+  <div class="my-scouts">
+    <div class="header">
+      <h3>Hello {{ store.user.name }}</h3>
+      <b-row>
+        <b-col>
+          <p>You are currently watching {{ playerData.length }} talents</p>
+        </b-col>
+        <b-col>
+          <b-button @click="toggleView" variant="primary">
+            {{ listView ? 'Switch to Card View' : 'Switch to List View' }}
+          </b-button>
+        </b-col>
+      </b-row>
+    </div>
 
     <!-- Display talents based on the current view -->
     <template v-if="listView">
@@ -55,7 +57,18 @@ const toggleView = () => {
   listView.value = !listView.value
 }
 
-onMounted(async () => {
-  await getPlayerDataFromWatchlist(store.user.watchlist)
+onMounted(() => {
+  getPlayerDataFromWatchlist(store.user.watchlist)
 })
 </script>
+<style>
+.my-scouts {
+  max-width: 1200px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.header {
+  margin: 50px;
+}
+</style>

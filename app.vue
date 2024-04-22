@@ -38,4 +38,7 @@ p {
 button:hover {
   cursor: pointer;
 }
+a {
+  text-decoration: none;
+}
 </style>
