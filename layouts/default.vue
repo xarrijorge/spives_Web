@@ -19,12 +19,17 @@
             <b-collapse id="nav-collapse" is-nav>
               <b-navbar-nav class="ml-auto">
                 <b-nav-item class="navItem" href="/talents">Talents</b-nav-item>
-                <b-nav-item class="navItem" href="/signup">Signup</b-nav-item>
-                <NuxtLink to="/#contact"
-                  ><b-button class="contactButton"
-                    >Contact Us</b-button
-                  ></NuxtLink
-                >
+
+                <b-nav-item class="navItem" href="/#contact">
+                  Contact us
+                </b-nav-item>
+                <b-nav-item
+                  v-if="!store.user.isLoggedIn"
+                  class="navItem"
+                  href="/login">
+                  Login
+                </b-nav-item>
+                <b-nav-item v-else @click="logout"> Logout </b-nav-item>
               </b-navbar-nav>
             </b-collapse>
           </b-col>
@@ -119,9 +124,20 @@ a.nav-link {
 }
 </style>
 <script setup>
-const route = useRoute()
+import { useMainStore } from '@/stores/main'
+const store = useMainStore()
+const router = useRouter()
+
+const logout = () => {
+  // Clear the user object to log out the user
+  store.user.value = {}
+  console.log(store.user.value)
+
+  // Redirect to the login page after logout
+  router.push('/login')
+}
 
 onMounted(() => {
-  console.log(route.params)
+  console.log(store.user.value)
 })
 </script>
