@@ -114,6 +114,16 @@ const navigateToChallenges = () => {
   // Navigate to challenges page
   router.push(`/scouts/${id}/challenges`)
 }
+onBeforeMount(() => {
+  if (!user.value.isLoggedIn) {
+    router.push('/login')
+  } else {
+    router.push(`/scouts/${id}`)
+  }
+})
+onMounted(() => {
+  console.log(user.value.isLoggedIn)
+})
 </script>
 <style scoped>
 .main {
