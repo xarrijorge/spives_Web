@@ -51,7 +51,7 @@
             <div class="stats-box">
               <FontAwesome :icon="['fas', 'earth-africa']" class="icon" />
               <div class="stats-text">
-                <h1>{{ String(user.watchlist.length).padStart(2, 0) }}</h1>
+                <h1>{{ String(watchlistCount).padStart(2, 0) }}</h1>
                 <p>My Watchlist</p>
               </div>
             </div>
@@ -64,7 +64,7 @@
             <div class="stats-box">
               <FontAwesome :icon="['fas', 'star-half-stroke']" class="icon" />
               <div class="stats-text">
-                <h1>{{ String(user.favorites.length).padStart(2, 0) }}</h1>
+                <h1>{{ String(favoritesCount).padStart(2, 0) }}</h1>
                 <p>Build Talents</p>
               </div>
             </div>
@@ -90,16 +90,22 @@
 </template>
 
 <script setup>
-import { useMainStore } from '@/stores/main'
+import { useAuthStore } from '@/stores/auth'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
 const route = useRoute()
 
-const store = useMainStore()
-const { user } = storeToRefs(store)
+const store = useAuthStore()
+const { user, isLoggedIn } = storeToRefs(store)
 
 const id = route.params.id
+const watchlistCount = computed(() =>
+  user.watchlist ? user.watchlist.length : 0
+)
+const favoritesCount = computed(() =>
+  user.favorites ? user.favorites.length : 0
+)
 const activeTab = ref('dashboard')
 
 const addAction = () => {
@@ -115,15 +121,13 @@ const navigateToChallenges = () => {
   router.push(`/scouts/${id}/challenges`)
 }
 onBeforeMount(() => {
-  if (!user.value.isLoggedIn) {
+  if (!isLoggedIn.value) {
     router.push('/login')
   } else {
     router.push(`/scouts/${id}`)
   }
 })
-onMounted(() => {
-  console.log(user.value.isLoggedIn)
-})
+onMounted(() => {})
 </script>
 <style scoped>
 .main {

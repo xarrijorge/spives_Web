@@ -1,4 +1,4 @@
-import { useMainStore } from "@/stores/main";
+import { useAuthStore } from "@/stores/auth";
 
 export const useAPIFetch = async (path, options = {}) => {
     const config = useRuntimeConfig();
@@ -6,7 +6,7 @@ export const useAPIFetch = async (path, options = {}) => {
 
     options.baseURL = config.public.baseURL;
 
-    const store = useMainStore();
+    const store = useAuthStore();
     const { token, isLoggedIn } = storeToRefs(store); // Destructure store properties
 
     const headers = isLoggedIn.value === true ? {

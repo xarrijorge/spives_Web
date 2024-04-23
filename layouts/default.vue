@@ -1,5 +1,6 @@
 <template>
   <div class="layout">
+    <BToastOrchestrator />
     <b-navbar
       toggleable="md"
       type="light"
@@ -124,13 +125,13 @@ a.nav-link {
 }
 </style>
 <script setup>
-import { useMainStore } from '@/stores/main'
-const store = useMainStore()
+import { useAuthStore } from '@/stores/auth'
+const store = useAuthStore()
 const router = useRouter()
 
 const logout = () => {
   // Clear the user object to log out the user
-  store.user.value = {}
+  store.$reset()
   console.log(store.user.value)
 
   // Redirect to the login page after logout
@@ -140,4 +141,12 @@ const logout = () => {
 onMounted(() => {
   console.log(store.user.value)
 })
+
+// watch isLoggedIn value and update Login button
+watch(
+  () => store.isLoggedIn,
+  (value) => {
+    console.log(value)
+  }
+)
 </script>

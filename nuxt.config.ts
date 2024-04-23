@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     '@bootstrap-vue-next/nuxt',
     '@vesp/nuxt-fontawesome',
     '@pinia/nuxt',
+    '@pinia-plugin-persistedstate/nuxt',
     'nuxt-gtag',
   ],
   gtag: {

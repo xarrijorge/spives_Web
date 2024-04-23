@@ -60,13 +60,14 @@
 </template>
 
 <script setup>
-import { useMainStore } from '@/stores/main'
+import { useAuthStore } from '@/stores/auth'
 import { ref } from 'vue'
 
-const store = useMainStore()
+const store = useAuthStore()
 const { user, token, isLoggedIn } = storeToRefs(store)
 
 const router = useRouter()
+const { show } = useToast()
 
 const username = ref('')
 const password = ref('')
@@ -88,7 +89,16 @@ const login = async () => {
     isLoggedIn.value = true
     user.value = data.user
 
-    router.push(`/scouts/${user.id}`)
+    isLoggedIn.value = true
+    router.replace(`/scouts/${user.value.id}`)
+    // router.push('/')
+    show?.({
+      props: {
+        title: 'Logged In!',
+        body: 'You have successfully logged in.',
+        variant: 'success',
+      },
+    })
   }
   console.log(user.value, token.value, isLoggedIn.value)
 }
@@ -97,6 +107,9 @@ const forgotPassword = () => {
   // Navigate to forgot password page or show modal
   console.log('Forgot Password?')
 }
+onMounted(() => {
+  console.log('loggedin', isLoggedIn.value)
+})
 </script>
 
 <style scoped>
