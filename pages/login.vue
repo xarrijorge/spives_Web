@@ -60,8 +60,11 @@
 </template>
 
 <script setup>
+import { useMainStore } from '@/stores/main'
 import { ref } from 'vue'
-import { useRouter } from 'vue-router'
+
+const store = useMainStore()
+const { user, token, isLoggedIn } = storeToRefs(store)
 
 const router = useRouter()
 
@@ -69,11 +72,25 @@ const username = ref('')
 const password = ref('')
 const userType = ref('talent') // Default to Talent
 
-const login = () => {
-  // Your login logic here
-  console.log('Username:', username.value)
-  console.log('Password:', password.value)
-  console.log('User Type:', userType.value)
+const login = async () => {
+  const data = await useAPIFetch('/auth/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: {
+      email: username.value,
+      password: password.value,
+    },
+  })
+  if (data) {
+    token.value = data.access_token
+    isLoggedIn.value = true
+    user.value = data.user
+
+    router.push(`/scouts/${user.id}`)
+  }
+  console.log(user.value, token.value, isLoggedIn.value)
 }
 
 const forgotPassword = () => {
