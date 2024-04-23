@@ -90,7 +90,7 @@ const login = async () => {
     user.value = data.user
 
     isLoggedIn.value = true
-    router.replace(`/scouts/${user.value.id}`)
+    router.push(`/scouts/${user.value.id}`)
     // router.push('/')
     show?.({
       props: {

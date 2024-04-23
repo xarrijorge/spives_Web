@@ -20,10 +20,19 @@ export const useAuthStore = defineStore(
                 '8c451f5d-84c0-4305-8102-84bc76f50de8',
             ],
         })
+
+        function $reset() {
+            isLoggedIn.value = false
+            user.value = {};
+            token.value = false;
+            sessionStorage.clear()
+        }
+
         return {
             token,
             isLoggedIn,
             user,
+            $reset
         }
     },
     {

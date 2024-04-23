@@ -25,7 +25,7 @@
                   Contact us
                 </b-nav-item>
                 <b-nav-item
-                  v-if="!store.user.isLoggedIn"
+                  v-if="!store.isLoggedIn"
                   class="navItem"
                   href="/login">
                   Login
@@ -128,14 +128,21 @@ a.nav-link {
 import { useAuthStore } from '@/stores/auth'
 const store = useAuthStore()
 const router = useRouter()
+const { show } = useToast()
+
+const { isLoggedIn } = storeToRefs(store)
 
 const logout = () => {
-  // Clear the user object to log out the user
   store.$reset()
-  console.log(store.user.value)
-
-  // Redirect to the login page after logout
   router.push('/login')
+
+  show?.({
+    props: {
+      title: 'Logged out!',
+      body: 'You have successfully logged out.',
+      variant: 'success',
+    },
+  })
 }
 
 onMounted(() => {
@@ -143,10 +150,4 @@ onMounted(() => {
 })
 
 // watch isLoggedIn value and update Login button
-watch(
-  () => store.isLoggedIn,
-  (value) => {
-    console.log(value)
-  }
-)
 </script>
