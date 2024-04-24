@@ -72,7 +72,7 @@
         </NuxtLink>
       </b-col>
     </b-row>
-    <b-row class="mt-4 advert">
+    <b-row class="mt-4 adverts">
       <b-col>
         <b-card>
           <h1>12</h1>
@@ -224,10 +224,12 @@ button.inactive {
   background-color: #00aa3e;
   border-radius: 20px;
   color: white;
+  margin-bottom: 10px;
 }
 .buildlist {
   background-color: #2792ae;
   color: white;
+  margin-bottom: 10px;
   border-radius: 20px;
 }
 .stats-text {
@@ -245,13 +247,11 @@ button.inactive {
   height: 40vh;
   margin-bottom: 50px;
 }
-.advert {
+.adverts {
   text-align: center;
+  gap: 5px;
 }
-.advert h1 {
+.adverts h1 {
   font-weight: bold;
-}
-.advert p {
-  font-size: 10px;
 }
 </style>
