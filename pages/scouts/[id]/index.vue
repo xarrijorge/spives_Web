@@ -101,7 +101,7 @@
     <b-row class="mt-4 scouts-tracker">
       <b-col>
         <b-card class="card">
-          <p>Scouts Tracker</p>
+          <Bar id="my-chart-id" :options="chartOptions" :data="chartData" />
         </b-card>
       </b-col>
     </b-row>
@@ -110,7 +110,18 @@
 
 <script setup>
 import { useAuthStore } from '@/stores/auth'
-import { useRouter } from 'vue-router'
+import { Bar } from 'vue-chartjs'
+import {
+  Chart as ChartJS,
+  Title,
+  Tooltip,
+  Legend,
+  BarElement,
+  CategoryScale,
+  LinearScale,
+} from 'chart.js'
+
+ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
 const router = useRouter()
 const route = useRoute()
@@ -126,6 +137,30 @@ const favoritesCount = computed(() =>
   user.favorites ? user.favorites.length : 0
 )
 const activeTab = ref('dashboard')
+
+const chartData = computed(() => ({
+  labels: ['January', 'February', 'March'],
+  datasets: [
+    {
+      label: 'Number of Talents',
+      backgroundColor: '#1F78B4',
+      data: [40, 20, 12],
+    },
+    {
+      label: 'Challenges Completed',
+      backgroundColor: '#26D5C9',
+      data: [60, 12, 19],
+    },
+  ],
+}))
+const chartOptions = computed(() => ({
+  responsive: true,
+  maintainAspectRatio: false,
+  title: {
+    display: true,
+    text: 'Scouts Tracker',
+  },
+}))
 
 const addAction = () => {
   if (activeTab.value === 'dashboard') {
@@ -150,7 +185,7 @@ onMounted(() => {})
 </script>
 <style scoped>
 .main {
-  width: 50vw;
+  width: 70vw;
   color: #000066;
 }
 button {
@@ -183,14 +218,17 @@ button.inactive {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 150px;
 }
 .watchlist {
   background-color: #00aa3e;
+  border-radius: 20px;
   color: white;
 }
 .buildlist {
   background-color: #2792ae;
   color: white;
+  border-radius: 20px;
 }
 .stats-text {
   margin-left: 10px;
@@ -204,7 +242,8 @@ button.inactive {
   font-size: 12px;
 }
 .scouts-tracker .card {
-  height: 250px;
+  height: 40vh;
+  margin-bottom: 50px;
 }
 .advert {
   text-align: center;
