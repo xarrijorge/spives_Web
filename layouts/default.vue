@@ -24,13 +24,19 @@
                 <b-nav-item class="navItem" href="/#contact">
                   Contact us
                 </b-nav-item>
-                <b-nav-item
-                  v-if="!store.isLoggedIn"
-                  class="navItem"
-                  href="/login">
+                <b-nav-item v-if="!isLoggedIn" class="navItem" href="/login">
                   Login
                 </b-nav-item>
-                <b-nav-item v-else @click="logout"> Logout </b-nav-item>
+                <b-row v-else>
+                  <b-col>
+                    <b-nav-item :href="`/scouts/${store.user.id}`">
+                      Dashboard
+                    </b-nav-item>
+                  </b-col>
+                  <b-col>
+                    <b-nav-item @click.prevent="logout"> Logout </b-nav-item>
+                  </b-col>
+                </b-row>
               </b-navbar-nav>
             </b-collapse>
           </b-col>
@@ -132,9 +138,9 @@ const { show } = useToast()
 
 const { isLoggedIn } = storeToRefs(store)
 
-const logout = () => {
+const logout = async () => {
   store.$reset()
-  router.push('/login')
+  await router.push('/')
 
   show?.({
     props: {
