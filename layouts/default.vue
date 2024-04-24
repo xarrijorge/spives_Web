@@ -1,85 +1,89 @@
 <template>
-  <div class="layout">
-    <BToastOrchestrator />
-    <b-navbar
-      toggleable="md"
-      type="light"
-      variant="light"
-      class="mainNav sticky-top">
-      <b-container fluid>
-        <b-row class="justify-content-between align-items-center">
-          <b-col>
-            <b-navbar-brand href="/">
-              <img src="/images/mainLogo.png" alt="Logo" height="30" />
-            </b-navbar-brand>
-          </b-col>
-          <b-col cols="auto">
-            <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-          </b-col>
-          <b-col cols="auto">
-            <b-collapse id="nav-collapse" is-nav>
-              <b-navbar-nav class="ml-auto">
-                <b-nav-item class="navItem" href="/talents">Talents</b-nav-item>
+  <client-only>
+    <div class="layout">
+      <BToastOrchestrator />
+      <b-navbar
+        toggleable="md"
+        type="light"
+        variant="light"
+        class="mainNav sticky-top">
+        <b-container fluid>
+          <b-row class="justify-content-between align-items-center">
+            <b-col>
+              <b-navbar-brand href="/">
+                <img src="/images/mainLogo.png" alt="Logo" height="30" />
+              </b-navbar-brand>
+            </b-col>
+            <b-col cols="auto">
+              <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+            </b-col>
+            <b-col cols="auto">
+              <b-collapse id="nav-collapse" is-nav>
+                <b-navbar-nav class="ml-auto">
+                  <b-nav-item class="navItem" href="/talents"
+                    >Talents</b-nav-item
+                  >
 
-                <b-nav-item class="navItem" href="/#contact">
-                  Contact us
-                </b-nav-item>
-                <b-nav-item v-if="!isLoggedIn" class="navItem" href="/login">
-                  Login
-                </b-nav-item>
-                <b-row v-else>
-                  <b-col>
-                    <b-nav-item :href="`/scouts/${store.user.id}`">
-                      Dashboard
-                    </b-nav-item>
-                  </b-col>
-                  <b-col>
-                    <b-nav-item @click.prevent="logout"> Logout </b-nav-item>
-                  </b-col>
-                </b-row>
-              </b-navbar-nav>
-            </b-collapse>
-          </b-col>
-        </b-row>
-      </b-container>
-    </b-navbar>
-    <slot />
-    <b-row class="footer d-flex align-items-center">
-      <b-col cols="6">
-        <p class="mb-0">
-          © {{ new Date().getFullYear() }} product of The Trinity Corp.
-        </p>
-      </b-col>
-      <b-col
-        cols="6"
-        class="text-right d-flex align-items-center justify-content-end">
-        <a
-          href="https://www.instagram.com/gospives?igsh=Nzl3MHlzb3RseTQ2"
-          target="_blank"
-          class="icon">
-          <font-awesome :icon="['fab', 'instagram']" />
-        </a>
-        <a
-          href="https://www.instagram.com/gospives?igsh=Nzl3MHlzb3RseTQ2"
-          class="icon"
-          target="_blank">
-          <font-awesome :icon="['fab', 'twitter']" />
-        </a>
-        <a
-          href="https://www.instagram.com/gospives?igsh=Nzl3MHlzb3RseTQ2"
-          class="icon"
-          target="_blank">
-          <font-awesome :icon="['fab', 'tiktok']" />
-        </a>
-        <a
-          href="https://www.instagram.com/gospives?igsh=Nzl3MHlzb3RseTQ2"
-          class="icon"
-          target="_blank">
-          <font-awesome :icon="['fab', 'linkedin']" />
-        </a>
-      </b-col>
-    </b-row>
-  </div>
+                  <b-nav-item class="navItem" href="/#contact">
+                    Contact us
+                  </b-nav-item>
+                  <b-nav-item v-if="!isLoggedIn" class="navItem" href="/login">
+                    Login
+                  </b-nav-item>
+                  <b-row v-else>
+                    <b-col>
+                      <b-nav-item :href="`/scouts/${store.user.id}`">
+                        Dashboard
+                      </b-nav-item>
+                    </b-col>
+                    <b-col>
+                      <b-nav-item @click.prevent="logout"> Logout </b-nav-item>
+                    </b-col>
+                  </b-row>
+                </b-navbar-nav>
+              </b-collapse>
+            </b-col>
+          </b-row>
+        </b-container>
+      </b-navbar>
+      <slot />
+      <b-row class="footer d-flex align-items-center">
+        <b-col cols="6">
+          <p class="mb-0">
+            © {{ new Date().getFullYear() }} product of The Trinity Corp.
+          </p>
+        </b-col>
+        <b-col
+          cols="6"
+          class="text-right d-flex align-items-center justify-content-end">
+          <a
+            href="https://www.instagram.com/gospives?igsh=Nzl3MHlzb3RseTQ2"
+            target="_blank"
+            class="icon">
+            <font-awesome :icon="['fab', 'instagram']" />
+          </a>
+          <a
+            href="https://www.instagram.com/gospives?igsh=Nzl3MHlzb3RseTQ2"
+            class="icon"
+            target="_blank">
+            <font-awesome :icon="['fab', 'twitter']" />
+          </a>
+          <a
+            href="https://www.instagram.com/gospives?igsh=Nzl3MHlzb3RseTQ2"
+            class="icon"
+            target="_blank">
+            <font-awesome :icon="['fab', 'tiktok']" />
+          </a>
+          <a
+            href="https://www.instagram.com/gospives?igsh=Nzl3MHlzb3RseTQ2"
+            class="icon"
+            target="_blank">
+            <font-awesome :icon="['fab', 'linkedin']" />
+          </a>
+        </b-col>
+      </b-row>
+    </div>
+  </client-only>
 </template>
 <style>
 .mainNav {

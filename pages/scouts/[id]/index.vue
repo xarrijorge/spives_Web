@@ -47,7 +47,7 @@
     <b-row class="mt-4 counters">
       <b-col>
         <NuxtLink :to="`/scouts/${id}/myscouts`">
-          <b-card>
+          <b-card class="watchlist">
             <div class="stats-box">
               <FontAwesome :icon="['fas', 'earth-africa']" class="icon" />
               <div class="stats-text">
@@ -60,7 +60,7 @@
       </b-col>
       <b-col>
         <NuxtLink :to="`/scouts/${id}/myscouts`">
-          <b-card>
+          <b-card class="buildlist">
             <div class="stats-box">
               <FontAwesome :icon="['fas', 'star-half-stroke']" class="icon" />
               <div class="stats-text">
@@ -75,6 +75,25 @@
     <b-row class="mt-4 advert">
       <b-col>
         <b-card>
+          <h1>12</h1>
+          <p>In-App Advertisement</p>
+        </b-card>
+      </b-col>
+      <b-col>
+        <b-card>
+          <h1>2</h1>
+          <p>In-App Advertisement</p>
+        </b-card>
+      </b-col>
+      <b-col>
+        <b-card>
+          <h1>18</h1>
+          <p>In-App Advertisement</p>
+        </b-card>
+      </b-col>
+      <b-col>
+        <b-card>
+          <h1>05</h1>
           <p>In-App Advertisement</p>
         </b-card>
       </b-col>
@@ -136,31 +155,42 @@ onMounted(() => {})
 }
 button {
   background-color: white;
-  padding: 5px 10px;
+  padding: 10px;
+  width: 200px;
+  height: 50px;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 10px;
+  font-weight: bold;
 }
 button.active {
-  background-color: #ff6600;
+  background-color: #000066;
   border: none;
   color: white;
 }
 button.inactive {
-  border: 1px solid #000066;
-  background-color: white;
+  border: none;
+  background-color: transparent;
 }
 .float-right {
   float: right;
 }
 .icon {
   font-size: 75px;
-  color: #000066;
+  color: #fff;
   pointer-events: none;
 }
 .stats-box {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.watchlist {
+  background-color: #00aa3e;
+  color: white;
+}
+.buildlist {
+  background-color: #2792ae;
+  color: white;
 }
 .stats-text {
   margin-left: 10px;
@@ -178,5 +208,11 @@ button.inactive {
 }
 .advert {
   text-align: center;
+}
+.advert h1 {
+  font-weight: bold;
+}
+.advert p {
+  font-size: 10px;
 }
 </style>
