@@ -1,46 +1,53 @@
 <template>
-  <div class="my-scouts">
-    <div class="header">
-      <h3>Hello {{ store.user.name }}</h3>
-      <b-row>
-        <b-col>
-          <p>You are currently watching {{ playerData.length }} talents</p>
-        </b-col>
-        <b-col>
-          <b-button @click="toggleView" variant="primary">
-            {{ listView ? 'Switch to Card View' : 'Switch to List View' }}
-          </b-button>
-        </b-col>
-      </b-row>
+  <div class="my-scouts" v-for="player in playerData">
+    <div class="watchCard">
+      <b-img :key="player.id" :src="player.image" alt="Player Image" fluid />
+      <div class="data">
+        <div class="profile">
+          <h4>Profile Summary</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque quod
+            accusantium enim incidunt eius et magnam nesciunt itaque repellat
+            eos nobis optio nihil consequuntur illum facilis perspiciatis hic,
+            veritatis consequatur.
+          </p>
+        </div>
+        <div class="skills">
+          <h5>Skills</h5>
+          <div class="skill-sets">
+            <div class="skill-set">
+              <b-img src="/images/shooting.png" alt="Football" />
+              <p>shooting 0</p>
+            </div>
+            <div class="skill-set">
+              <b-img src="/images/passing.png" alt="Football" />
+              <p>shooting 0</p>
+            </div>
+            <div class="skill-set">
+              <b-img src="/images/crossing.png" alt="Football" />
+              <p>shooting 0</p>
+            </div>
+            <div class="skill-set">
+              <b-img src="/images/sprinting.png" alt="Football" />
+              <p>shooting 0</p>
+            </div>
+            <div class="skill-set">
+              <b-img src="/images/shooting.png" alt="Football" />
+              <p>shooting 0</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <!-- Display talents based on the current view -->
-    <template v-if="listView">
-      <TalentTable :playerData="playerData" />
-    </template>
-    <template v-else>
-      <b-row>
-        <b-col
-          cols="12"
-          sm="6"
-          md="4"
-          lg="3"
-          v-for="player in playerData"
-          :key="player.id"
-          class="mb-3">
-          <PlayerCard :player="player" />
-        </b-col>
-      </b-row>
-    </template>
   </div>
 </template>
 
 <script setup>
 import { useMainStore } from '@/stores/main'
-import PlayerCard from '@/components/PlayerCard.vue'
-import TalentTable from '@/components/TalentTable.vue'
+import { useAuthStore } from '@/stores/auth'
 
 const store = useMainStore()
+const authStore = useAuthStore()
 const playerData = ref([])
 const listView = ref(true) // Boolean flag for toggling between list view and card view
 
@@ -58,7 +65,7 @@ const toggleView = () => {
 }
 
 onMounted(() => {
-  getPlayerDataFromWatchlist(store.user.watchlist)
+  getPlayerDataFromWatchlist(authStore.user.watchlist)
 })
 </script>
 <style>
@@ -70,5 +77,41 @@ onMounted(() => {
 
 .header {
   margin: 50px;
+}
+.watchCard {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+.watchCard img {
+  height: 300px;
+}
+.data {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #eceaea;
+}
+.skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.skill-sets {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.skill-set img {
+  height: 40px;
 }
 </style>
