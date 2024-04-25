@@ -35,6 +35,9 @@
               <b-img src="/images/shooting.png" alt="Football" />
               <p>shooting 0</p>
             </div>
+            <NuxtLink :to="`/talents/${player.id}`">
+              <button class="detailsButton">More Details</button>
+            </NuxtLink>
           </div>
         </div>
       </div>
@@ -109,9 +112,20 @@ onMounted(() => {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-end;
 }
 .skill-set img {
   height: 40px;
+}
+.detailsButton {
+  background-color: #000066;
+  width: 100px;
+  height: 35px;
+  color: #fff;
+  border-radius: 50px;
+  font-size: 12px;
+  margin: 0;
+  outline: none;
+  border: none;
 }
 </style>
