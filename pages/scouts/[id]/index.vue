@@ -74,25 +74,25 @@
     </b-row>
     <b-row class="mt-4 adverts">
       <b-col>
-        <b-card>
+        <b-card class="stats">
           <h1>12</h1>
           <p>In-App Advertisement</p>
         </b-card>
       </b-col>
       <b-col>
-        <b-card>
+        <b-card class="stats">
           <h1>2</h1>
           <p>In-App Advertisement</p>
-        </b-card>
+        </b-card class="stats">
       </b-col>
       <b-col>
-        <b-card>
+        <b-card class="stats">
           <h1>18</h1>
           <p>In-App Advertisement</p>
         </b-card>
       </b-col>
       <b-col>
-        <b-card>
+        <b-card class="stats items-center">
           <h1>05</h1>
           <p>In-App Advertisement</p>
         </b-card>
@@ -253,5 +253,9 @@ button.inactive {
 }
 .adverts h1 {
   font-weight: bold;
+}
+.stats{
+  height: 150px;
+  border-radius: 20px;
 }
 </style>
