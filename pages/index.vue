@@ -20,57 +20,63 @@
     </b-row>
 
     <!-- Young Talents Section -->
-    <div class="talents">
-      <PlayerCard
-        v-for="player in talents.slice(0, 3)"
-        :key="player.id"
-        :player="player" />
+    <b-row class="talents">
+      <h3>create your profile card and be seen</h3>
+      <p>we believe that every footballer has the opportunity to shine</p>
+      <b-row class="cardbox">
+        <b-col> <b-img src="/images/playerCard.png" /> </b-col
+        ><b-col> <b-img src="/images/playerCard.png" /> </b-col
+        ><b-col> <b-img src="/images/playerCard.png" /> </b-col
+        ><b-col> <b-img src="/images/playerCard.png" /> </b-col
+        ><b-col>
+          <b-img src="/images/playerCard.png" />
+        </b-col>
+      </b-row>
+      <b-col>
+        <b-button small>Create Card</b-button>
+      </b-col>
+    </b-row>
+
+    <div class="story">
+      <h2>stories we enjoy telling</h2>
+      <div class="storybox">
+        <b-img src="/images/childrenplaying.png" />
+        <div class="tale">
+          <p>
+            On one of our trips to an local football field in East Legon, Accra,
+            Ghana. We got to experience an amazing pool of talent and it become
+            more dire why we need to these find a way to create a platform that
+            gives the young African football talent an opportunity to showcase
+            their talents.
+          </p>
+          <b-button small>Read More..</b-button>
+        </div>
+      </div>
+      <div class="storybox">
+        <b-img src="/images/childrenplaying.png" />
+        <div class="tale">
+          <p>
+            On one of our trips to an local football field in East Legon, Accra,
+            Ghana. We got to experience an amazing pool of talent and it become
+            more dire why we need to these find a way to create a platform that
+            gives the young African football talent an opportunity to showcase
+            their talents.
+          </p>
+          <b-button small>Read More..</b-button>
+        </div>
+      </div>
     </div>
 
     <!-- Pricing Plans Section -->
-    <b-row class="mb-5 section-container">
+    <b-row class="mb-5 pricing">
       <b-col cols="12" md="4">
-        <PricingCard
-          PricingIcon="/images/triangle.png"
-          card-title="Talents"
-          color="#00A1C0"
-          buttoncolor="#ff6632"
-          price="2"
-          :benefits="[
-            'Access to trainers/coaches',
-            'Opportunity to meet scout',
-            'Access to create analytics',
-          ]" />
+        <b-img src="images/talentsPricing.png" />
       </b-col>
       <b-col cols="12" md="4">
-        <PricingCard
-          PricingIcon="/images/diamond.png"
-          card-title="Scouts"
-          color="#FF6632"
-          buttoncolor="#ff6632"
-          price="52"
-          :benefits="[
-            'Easy access to multiple player profiles',
-            'Access to player analytics',
-            'Player info data',
-            'Connect with other coaches/scouts',
-          ]" />
+        <b-img src="images/talentsPricing.png" />
       </b-col>
       <b-col cols="12" md="4">
-        <PricingCard
-          PricingIcon="/images/hexagon.png"
-          card-title="Football Clubs"
-          color="#F8B34A"
-          buttoncolor="#000066"
-          price="86"
-          buttontext="Coming Soon"
-          :benefits="[
-            'Create club profiles',
-            'Access player profiles',
-            'Access to scouts/coaches',
-            'Access to create multiple player analytics',
-            'One-on-one consultation',
-          ]" />
+        <b-img src="images/talentsPricing.png" />
       </b-col>
     </b-row>
 
@@ -78,11 +84,11 @@
     <b-row class="mb-5 section-container">
       <b-col cols="12" class="team-section">
         <div class="text">
-          <h1>Our Team</h1>
+          <h1>the team</h1>
           <p>
-            Across Africa, a passionate team unites. We bring diverse talents
-            together to showcase the best of African creativity on the global
-            stage. Meet the Spives family!
+            Diverse, Dynamic, Driven – that's Team Spives! Hailing from Lagos,
+            Accra, and Mozambique, we're a vibrant squad passionate about
+            showcasing the best of African football talent
           </p>
         </div>
         <b-row>
@@ -168,15 +174,59 @@ const talents = players
   align-items: center;
 }
 .team-section .text {
-  width: 40%;
+  width: 60%;
   line-height: 2;
   margin: 20px 0;
 }
 .talents {
+  background-color: #000066;
+  padding: 50px;
+  height: 70vh;
+  text-align: center;
+  align-items: space-evenly;
+}
+.pricing {
+  padding: 50px;
+  background-color: #d9d9d9;
+}
+.pricing img {
+  max-width: 80%;
+}
+.talents * {
+  color: #fff;
+}
+.talents img {
+  max-width: 100%;
+}
+.talents button {
+  background-color: #ff6633;
+}
+.cardbox {
+  margin: 20px 0;
+}
+
+.story {
+  height: 100vh;
+  /* background-image: url('/images/storybg.png'); */
+  padding: 100px;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  column-gap: 100px;
+  flex-direction: column;
+}
+.storybox {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 0;
+}
+.storybox img {
+  height: 250px;
+}
+.storybox .tale {
+  margin: 0 50px;
+}
+.tale button {
+  margin-top: 50px;
+  background-color: #000066;
+  color: #fff;
 }
 
 /* Custom styles for pricing cards on mobile */
