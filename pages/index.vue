@@ -37,6 +37,8 @@
       </b-col>
     </b-row>
 
+    <!-- Story Section -->
+
     <div class="story">
       <h2>stories we enjoy telling</h2>
       <div class="storybox">
@@ -94,15 +96,23 @@
         <b-row>
           <b-col cols="6" md="3">
             <b-img src="/images/PauloProfile.jpeg" fluid />
+            <p class="name">Paulo Ouana</p>
+            <p class="position">CTO</p>
           </b-col>
           <b-col cols="6" md="3">
             <b-img src="/images/ushaProfile.jpeg" fluid />
+            <p class="name">Ushahemba Shir</p>
+            <p class="position">COO</p>
           </b-col>
           <b-col cols="6" md="3">
             <b-img src="/images/CaptainProfile.jpeg" fluid />
+            <p class="name">Nunya Tomey</p>
+            <p class="position">CPO</p>
           </b-col>
           <b-col cols="6" md="3">
             <b-img src="/images/GenesisProfile.jpeg" fluid />
+            <p class="name">Genesis Chukwuma</p>
+            <p class="position">CEO</p>
           </b-col>
         </b-row>
       </b-col>
@@ -229,6 +239,12 @@ const talents = players
   color: #fff;
 }
 
+.name {
+  margin-top: 10px;
+}
+.position {
+  font-weight: bold;
+}
 /* Custom styles for pricing cards on mobile */
 @media (max-width: 767px) {
   .team-section .text {
