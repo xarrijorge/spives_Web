@@ -222,6 +222,9 @@ const talents = players
   display: flex;
   flex-direction: column;
 }
+.story h2 {
+  font-weight: bold;
+}
 .storybox {
   display: flex;
   justify-content: space-between;
