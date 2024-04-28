@@ -31,7 +31,11 @@
               class="mb-3" />
           </b-form-group>
           <b-form-group>
-            <b-form-checkbox v-model="formData.acceptTerms" id="terms">
+            <b-form-checkbox
+              v-model="formData.acceptTerms"
+              name="terms"
+              size="lg"
+              required>
               I accept the Terms of Service and Privacy Policy.
             </b-form-checkbox>
           </b-form-group>
@@ -77,12 +81,27 @@ const submitForm = () => {
   flex-direction: column;
   justify-content: space-between;
 }
+input,
+textarea {
+  background-color: #d9d9d9;
+}
+input[type='check'] {
+  width: 50px;
+  height: 100px;
+  background-color: red;
+}
 
 .image-container {
   text-align: center;
 }
 .contactImage {
   max-width: 80%;
+}
+
+.contactButton {
+  background-color: #000066 !important;
+  margin: 10px 0;
+  color: white;
 }
 
 @media (max-width: 720px) {
