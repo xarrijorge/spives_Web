@@ -23,15 +23,9 @@
     <b-row class="talents">
       <h3>create your profile card and be seen</h3>
       <p>we believe that every footballer has the opportunity to shine</p>
-      <b-row class="cardbox">
-        <b-col> <b-img src="/images/playerCard.png" /> </b-col
-        ><b-col> <b-img src="/images/playerCard.png" /> </b-col
-        ><b-col> <b-img src="/images/playerCard.png" /> </b-col
-        ><b-col> <b-img src="/images/playerCard.png" /> </b-col
-        ><b-col>
-          <b-img src="/images/playerCard.png" />
-        </b-col>
-      </b-row>
+      <div class="cardbox">
+        <PlayerCard v-for="player in talents" class="pcard" :player="player" />
+      </div>
       <b-col>
         <b-button small>Create Card</b-button>
       </b-col>
@@ -129,14 +123,13 @@
 
 <script setup>
 import { useMainStore } from '@/stores/main'
-import PricingCard from '../components/PricingCard.vue'
 import ContactUs from '../components/ContactUs.vue'
 import ContactButton from '../components/ContactButton.vue'
 
 const store = useMainStore()
 const { players } = storeToRefs(store)
 
-const talents = players
+const talents = players.value.slice(0, 3)
 </script>
 
 <style scoped>
@@ -191,7 +184,7 @@ const talents = players
 .talents {
   background-color: #000066;
   padding: 50px;
-  height: 70vh;
+  height: max-content;
   text-align: center;
   align-items: space-evenly;
 }
@@ -212,11 +205,17 @@ const talents = players
   background-color: #ff6633;
 }
 .cardbox {
+  display: flex;
+  justify-content: space-evenly;
+  height: max-content;
+  width: 100%;
   margin: 20px 0;
+}
+.pcard {
 }
 
 .story {
-  height: 100vh;
+  height: max-content;
   /* background-image: url('/images/storybg.png'); */
   padding: 100px;
   display: flex;
