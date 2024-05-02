@@ -4,7 +4,12 @@
       <div>
         <b-img :key="player.id" :src="player.image" alt="Player Image" fluid />
       </div>
-      <button class="requestButton">Request Contact</button>
+      <div>
+        <button class="requestButton">Request Contact</button>
+      </div>
+      <div>
+        <button class="requestButton">Add to Watchlist</button>
+      </div>
     </div>
     <div class="data">
       <div class="profile">
@@ -130,12 +135,18 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 50px;
 }
 .skill-sets {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
   align-items: flex-end;
+  margin-bottom: 50px;
+}
+.skill-set {
+  margin-right: 20px;
 }
 .skill-set img {
   height: 40px;
