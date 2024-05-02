@@ -79,17 +79,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-
-const formData = ref({
-  name: '',
-  nationality: '',
-  age: null,
-  position: [],
-  gender: '',
-  image: null,
-  acceptTerms: false,
-})
+const router = useRouter()
 
 const positionOptions = [
   { value: 'GK', text: 'Goalkeeper' },
@@ -113,8 +103,42 @@ const genderOptions = [
   { value: 'Male', text: 'Male' },
   { value: 'Female', text: 'Female' },
 ]
+const formData = ref({
+  email: '',
+  password: '',
+  confirmPassword: '',
+  name: '',
+  nationalityId: '',
+  age: 0,
+  gender: 'Male',
+  userType: 'Talent',
+  ageRange: '',
+  avatar: '',
+  playerPositions: [],
+})
 
-const submitForm = () => {
-  // Submit logic here
+const submitForm = async () => {
+  try {
+    const response = await useAPIFetch(
+      'https://spives.onrender.com/auth/register',
+      {
+        method: 'POST',
+        data: formData.value,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
+    )
+    console.log(response.data) // Handle success response
+    // Optionally, redirect to another page upon successful registration
+    router.push('/login')
+    show?.({
+      title: 'Registration Successful',
+      message: 'You have successfully registered.',
+      variant: 'success',
+    })
+  } catch (error) {
+    console.error(error) // Handle error response
+  }
 }
 </script>

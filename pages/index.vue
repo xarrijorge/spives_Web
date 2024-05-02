@@ -255,6 +255,12 @@ const talents = players.value.slice(0, 3)
 .position {
   font-weight: bold;
 }
+
+#contact {
+  background: linear-gradient(#fffffff8, #fffffff8), url('/images/storybg.png');
+  background-position: center;
+  background-size: contain;
+}
 /* Custom styles for pricing cards on mobile */
 @media (max-width: 767px) {
   .team-section .text {

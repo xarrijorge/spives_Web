@@ -8,7 +8,9 @@
         <button class="requestButton">Request Contact</button>
       </div>
       <div>
-        <button class="requestButton">Add to Watchlist</button>
+        <button class="requestButton" @click="addToWatchlist">
+          Add to Watchlist
+        </button>
       </div>
     </div>
     <div class="data">
@@ -113,9 +115,11 @@
 </template>
 <script setup>
 import { useMainStore } from '@/stores/main'
+import { useAuthStore } from '@/stores/auth'
 
 const route = useRoute()
 const store = useMainStore()
+const authStore = useAuthStore()
 
 const player = ref()
 const videoSrc1 = ref('EjyiCI1hzzo')
