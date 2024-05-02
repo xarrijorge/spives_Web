@@ -50,10 +50,10 @@
       <b-row class="footer d-flex align-items-center">
         <b-col cols="6">
           <p class="mb-0">
-            © {{ new Date().getFullYear() }} product of The Trinity Corp.
+            property of The Trinity Corp since © {{ new Date().getFullYear() }}
           </p>
         </b-col>
-        <b-col
+        <!-- <b-col
           cols="6"
           class="text-right d-flex align-items-center justify-content-end">
           <a
@@ -80,7 +80,7 @@
             target="_blank">
             <font-awesome :icon="['fab', 'linkedin']" />
           </a>
-        </b-col>
+        </b-col> -->
       </b-row>
     </div>
   </client-only>
