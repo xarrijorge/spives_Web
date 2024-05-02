@@ -66,8 +66,8 @@
     <!-- Pricing Plans Section -->
     <b-row class="mb-5 pricing">
       <b-img src="images/talentsPricing.png" cols="12" md="6" />
-      <b-img src="images/talentsPricing.png" cols="12" md="6" />
-      <b-img src="images/talentsPricing.png" cols="12" md="6" />
+      <b-img src="images/scoutsPricing.png" cols="12" md="6" />
+      <b-img src="images/scoutsPricing2.png" cols="12" md="6" />
     </b-row>
 
     <!-- Our Team Section -->
