@@ -23,7 +23,9 @@
                   <b-nav-item class="navItem" href="/talents"
                     >Talents</b-nav-item
                   >
-
+                  <b-nav-item :href="`/scouts/${store.user.id}`">
+                    {{ isLoggedIn ? 'Dashboard' : 'Scouts' }}
+                  </b-nav-item>
                   <b-nav-item class="navItem" href="/#contact">
                     Contact us
                   </b-nav-item>
@@ -31,11 +33,6 @@
                     Login
                   </b-nav-item>
                   <b-row v-else>
-                    <b-col>
-                      <b-nav-item :href="`/scouts/${store.user.id}`">
-                        Dashboard
-                      </b-nav-item>
-                    </b-col>
                     <b-col>
                       <b-nav-item @click.prevent="logout"> Logout </b-nav-item>
                     </b-col>
@@ -112,7 +109,7 @@ const store = useAuthStore()
 const router = useRouter()
 const { show } = useToast()
 
-const { isLoggedIn } = storeToRefs(store)
+const { isLoggedIn, user } = storeToRefs(store)
 
 const logout = async () => {
   store.$reset()
