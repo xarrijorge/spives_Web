@@ -53,34 +53,6 @@
             property of The Trinity Corp since © {{ new Date().getFullYear() }}
           </p>
         </b-col>
-        <!-- <b-col
-          cols="6"
-          class="text-right d-flex align-items-center justify-content-end">
-          <a
-            href="https://www.instagram.com/gospives?igsh=Nzl3MHlzb3RseTQ2"
-            target="_blank"
-            class="icon">
-            <font-awesome :icon="['fab', 'instagram']" />
-          </a>
-          <a
-            href="https://www.instagram.com/gospives?igsh=Nzl3MHlzb3RseTQ2"
-            class="icon"
-            target="_blank">
-            <font-awesome :icon="['fab', 'twitter']" />
-          </a>
-          <a
-            href="https://www.instagram.com/gospives?igsh=Nzl3MHlzb3RseTQ2"
-            class="icon"
-            target="_blank">
-            <font-awesome :icon="['fab', 'tiktok']" />
-          </a>
-          <a
-            href="https://www.instagram.com/gospives?igsh=Nzl3MHlzb3RseTQ2"
-            class="icon"
-            target="_blank">
-            <font-awesome :icon="['fab', 'linkedin']" />
-          </a>
-        </b-col> -->
       </b-row>
     </div>
   </client-only>

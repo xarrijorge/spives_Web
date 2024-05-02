@@ -33,7 +33,7 @@
 
     <!-- Story Section -->
 
-    <div class="story">
+    <b-row class="story">
       <h2>stories we enjoy telling</h2>
       <div class="storybox">
         <b-img src="/images/childrenplaying.png" />
@@ -61,23 +61,17 @@
           <b-button small>Read More..</b-button>
         </div>
       </div>
-    </div>
+    </b-row>
 
     <!-- Pricing Plans Section -->
     <b-row class="mb-5 pricing">
-      <b-col cols="12" md="4">
-        <b-img src="images/talentsPricing.png" />
-      </b-col>
-      <b-col cols="12" md="4">
-        <b-img src="images/talentsPricing.png" />
-      </b-col>
-      <b-col cols="12" md="4">
-        <b-img src="images/talentsPricing.png" />
-      </b-col>
+      <b-img src="images/talentsPricing.png" cols="12" md="6" />
+      <b-img src="images/talentsPricing.png" cols="12" md="6" />
+      <b-img src="images/talentsPricing.png" cols="12" md="6" />
     </b-row>
 
     <!-- Our Team Section -->
-    <b-row class="mb-5 section-container">
+    <b-row class="mb-5 team">
       <b-col cols="12" class="team-section">
         <div class="text">
           <h1>the team</h1>
@@ -169,6 +163,16 @@ const talents = players.value.slice(0, 3)
 .heroImage {
   max-width: 90%;
 }
+.team {
+  /* background: linear-gradient(#fffffff8, #fffffff8), url('/images/storybg.png'); */
+  background-position: center;
+  margin: 0;
+  background-size: contain;
+  height: max-content;
+  margin: 50px auto;
+  padding: 0 5%;
+  background-color: red;
+}
 .team-section {
   text-align: center;
   display: flex;
@@ -190,10 +194,13 @@ const talents = players.value.slice(0, 3)
 }
 .pricing {
   padding: 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   background-color: #d9d9d9;
 }
 .pricing img {
-  max-width: 80%;
+  max-width: 30%;
 }
 .talents * {
   color: #fff;
@@ -216,7 +223,9 @@ const talents = players.value.slice(0, 3)
 
 .story {
   height: max-content;
-  /* background-image: url('/images/storybg.png'); */
+  background: linear-gradient(#fffffff8, #fffffff8), url('/images/storybg.png');
+  background-position: center;
+  background-size: contain;
   padding: 100px;
   display: flex;
   flex-direction: column;
@@ -255,6 +264,13 @@ const talents = players.value.slice(0, 3)
   .talents {
     flex-direction: column;
     align-items: center;
+  }
+  .pricing {
+    flex-direction: column;
+    align-items: center;
+  }
+  .pricing img {
+    max-width: 80%;
   }
 }
 </style>

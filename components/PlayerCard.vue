@@ -48,7 +48,7 @@
             Appearances: <span>{{ player.appreances || '??' }}</span>
           </h5>
         </div>
-        <img :src="playerPositionImage" class="pitch" />
+        <img src="/images/profile/newPitch.png" class="pitch" />
       </div>
     </div>
   </NuxtLink>
@@ -164,6 +164,7 @@ a {
   display: flex;
   align-items: center;
   padding-left: 10px;
+  text-align: left;
 }
 .details * {
   font-size: 0.8vw;
@@ -180,8 +181,8 @@ a {
   line-height: 1.5;
 }
 .pitch {
-  transform: rotate(-90deg);
-  max-width: 45%;
+  /* transform: rotate(-90deg); */
+  max-width: 25%;
   margin-left: auto;
 }
 @media (max-width: 720px) {
