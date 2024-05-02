@@ -48,7 +48,7 @@
             Appearances: <span>{{ player.appreances || '??' }}</span>
           </h5>
         </div>
-        <img src="/images/profile/newPitch.png" class="pitch" />
+        <img src="/images/e/newpitch.png" class="pitch" />
       </div>
     </div>
   </NuxtLink>
