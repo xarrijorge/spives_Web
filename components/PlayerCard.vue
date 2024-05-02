@@ -7,6 +7,7 @@
         :style="{ 'background-image': `url(${player.image})` }">
         <img :src="`/images/flags/${nationality}.png`" class="flag" />
         <div class="graphics"></div>
+        <FontAwesome :icon="['fas', 'eye']" class="fav-button" />
       </div>
       <div class="player-stats">
         <div class="stat-box">
@@ -151,6 +152,13 @@ const playerPositionImage = computed(
   position: absolute;
   top: 20px;
   left: 30px;
+}
+.fav-button {
+  height: 30px;
+  margin-left: auto;
+  position: absolute;
+  top: 20px;
+  right: 30px;
 }
 a {
   text-decoration: none;

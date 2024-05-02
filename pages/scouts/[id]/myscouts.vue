@@ -59,10 +59,7 @@
         <div class="profile">
           <h4>Profile Summary</h4>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque quod
-            accusantium enim incidunt eius et magnam nesciunt itaque repellat
-            eos nobis optio nihil consequuntur illum facilis perspiciatis hic,
-            veritatis consequatur.
+            {{ player.summary }}
           </p>
         </div>
         <div class="skills">

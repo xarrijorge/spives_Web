@@ -11,7 +11,8 @@ const Players = [
         "coach": "Gideon",
         "foot": "Right",
         "id": "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11",
-        "nickname": "The Wall"
+        "nickname": "The Wall",
+        "summary": "The Wall: A towering center-back known for his commanding presence in defense and aerial dominance. With a knack for timely tackles and clearances, he's a reliable anchor for any team's backline. Off the pitch, he's a dedicated student with a passion for strategy, aiming to pursue a professional career while representing Nigeria and dreaming of playing for Arsenal in the Premier League."
     },
     {
         "name": "Alexander Adodo",
@@ -25,7 +26,8 @@ const Players = [
         "coach": "Gideon",
         "foot": "Right",
         "id": "3668a7d2-d5d8-41c2-9f0e-8d7a2b3b5b3f",
-        "nickname": "The Playmaker"
+        "nickname": "The Playmaker",
+        "summary": "The Player Maker: A dynamic playmaker who orchestrates the flow of the game with his exceptional vision, passing range, and creativity. Whether threading pinpoint through balls or unleashing long-range strikes, he's the heartbeat of his team's attack. Despite his football prowess, he maintains a strong commitment to his studies, excelling academically. His dream is to represent Ghana at the highest level while gracing the midfield for Manchester United, his favorite Premier League club."
     },
     {
         "name": "Gideon Anaba",
@@ -39,7 +41,8 @@ const Players = [
         "coach": "Gideon",
         "foot": "Right",
         "id": "7a9fd7d2-0951-4f9e-b3d7-bdf9e986f9a4",
-        "nickname": "The Goalscorer"
+        "nickname": "The Goalscorer",
+        "summary": "The Goal Scorer: A prolific goal-scorer blessed with blistering pace and deadly finishing skills. Whether it's cutting through defenses with speed or finding the back of the net with precision, he's a constant threat up front. Despite his prowess on the pitch, he maintains a strong focus on his studies, aiming to balance both worlds. His ultimate goal is to lead the line for Ghana at the highest level while wearing the jersey of Manchester City."
     },
     {
         "name": "Augustine Opoku",
@@ -95,7 +98,8 @@ const Players = [
         "coach": "Gideon",
         "foot": "Right",
         "id": "a96b5d06-7c29-4e07-8c18-7b897e7f1a09",
-        "nickname": "The Maestro"
+        "nickname": "The Maestro",
+        "summary": "The Midfield Maestro: A versatile midfielder with exceptional vision and passing accuracy, capable of dictating the tempo of the game. His tactical awareness and ability to control the midfield make him a vital asset to any team. Balancing his football ambitions with academic excellence, he aspires to represent Ghana on the international stage and dreams of donning the colors of Liverpool in the English top flight."
     },
     {
         "name": "Denzel Adodo",
@@ -390,7 +394,8 @@ const Players = [
         "coach": "Gideon",
         "foot": "Both",
         "id": "f8e6c7e2-f0e0-4d9e-a2c7-e8f9b7f8d7e4",
-        "nickname": "The Glove"
+        "nickname": "The Glove",
+        "summary": "Very promising young goalie"
     },
     {
         "name": "Prince Fianku",

@@ -2,25 +2,35 @@
   <div class="watchCard">
     <div class="requestBox">
       <div>
-        <b-img :key="player.id" :src="player.image" alt="Player Image" fluid />
+        <b-img
+          class="player-image"
+          :key="player.id"
+          :src="player.image"
+          alt="Player Image"
+          fluid />
       </div>
       <div>
-        <button class="requestButton">Request Contact</button>
+        <p>Name: {{ player.nickname }}</p>
+        <p>Age: {{ player.age }}</p>
+        <p>Position: {{ player.position }}</p>
+        <p>Foot: {{ player.foot }}</p>
       </div>
-      <div>
-        <button class="requestButton" @click="addToWatchlist">
-          Add to Watchlist
-        </button>
-      </div>
+      <b-row>
+        <b-col>
+          <button class="requestButton">Request Contact</button>
+        </b-col>
+        <b-col>
+          <button class="requestButton" @click="addToWatchlist">
+            Add to Watchlist
+          </button>
+        </b-col>
+      </b-row>
     </div>
     <div class="data">
       <div class="profile">
         <h4>Profile Summary</h4>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque quod
-          accusantium enim incidunt eius et magnam nesciunt itaque repellat eos
-          nobis optio nihil consequuntur illum facilis perspiciatis hic,
-          veritatis consequatur.
+          {{ player.summary }}
         </p>
       </div>
       <div class="skills">
@@ -146,11 +156,24 @@ onMounted(() => {
 })
 </script>
 
-<style>
+<style scoped>
 main {
   width: 80vw;
   margin: 0 auto;
   color: #000066;
+}
+.requestBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+}
+.requestButton {
+  font-size: 12px;
+  min-width: max-content;
+  padding: 0 5px;
+}
+.player-image {
 }
 
 .videos {
