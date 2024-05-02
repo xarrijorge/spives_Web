@@ -1,6 +1,6 @@
 <template>
-  <router-link to="/#contact">
-    <b-button class="contactButton">Contact Us</b-button>
+  <router-link to="/talents/signup">
+    <b-button class="contactButton">Create Card</b-button>
   </router-link>
 </template>
 <script setup></script>
