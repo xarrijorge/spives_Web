@@ -171,7 +171,6 @@ const talents = players.value.slice(0, 3)
   height: max-content;
   margin: 50px auto;
   padding: 0 5%;
-  background-color: red;
 }
 .team-section {
   text-align: center;
