@@ -131,10 +131,10 @@ const { user, isLoggedIn } = storeToRefs(store)
 
 const id = route.params.id
 const watchlistCount = computed(() =>
-  user.watchlist ? user.watchlist.length : 0
+  user.watchlist ? user.watchlist.length : 3
 )
 const favoritesCount = computed(() =>
-  user.favorites ? user.favorites.length : 0
+  user.favorites ? user.favorites.length : 4
 )
 const activeTab = ref('dashboard')
 
